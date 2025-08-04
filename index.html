@@ -695,21 +695,20 @@
     if (isHome) {
       function updateDateTime() {
         const now = new Date();
-           const date = now.toLocaleDateString('en-GB', {  
-      weekday: 'long',  
-      year: 'numeric',  
-      month: 'long',  
-      day: 'numeric'  
-    });  
-   const time = now.toLocaleTimeString('en-GB', {  
-      hour: '2-digit',  
-      minute: '2-digit',  
-      second: '2-digit',  
-      hour12: false  
-    });  
-    datetimeDiv.textContent = `${date} - ${time}`;  
-  }  
-     
+        const options = {
+          weekday: 'long',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: false
+        };
+        const formatted = now.toLocaleDateString('en-GB', options);
+        const time = now.toLocaleTimeString('en-GB');
+        datetimeDiv.textContent = `${formatted}`;
+      }
 
       updateDateTime();
       setInterval(updateDateTime, 1000);
