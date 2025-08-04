@@ -85,7 +85,7 @@
           <img src="https://yazid7.github.io/yazid/assets/img/profile.jpg" class="img-fluid" alt="">
         </div>
         <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-          <p>I am Yazid Zenati , 29 years old, from Algeria.  level is third secondary, experimental science. I am interested in everything new in modern technology, artificial intelligence and website development.
+          <p>I am Yazid Zenati , <span id="age"></span> years old, from Algeria.  level is third secondary, experimental science. I am interested in everything new in modern technology, artificial intelligence and website development.
           </p>
           <div class="row">
             <div class="col-lg-6">
@@ -662,6 +662,22 @@
       typeSpeed: 65,
       backSpeed: 65
     });
+  </script>
+   <script>
+    function calculateAge(birthDateStr) {
+      const birthDate = new Date(birthDateStr);
+      const today = new Date();
+      let age = today.getFullYear() - birthDate.getFullYear();
+      const m = today.getMonth() - birthDate.getMonth();
+      if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+      }
+      return age;
+    }
+
+    // 👇 تاريخ ميلادك هنا
+    const age = calculateAge("1993-12-06");
+    document.getElementById("age").textContent = age;
   </script>
 
   <!-- Template Main JS File -->
