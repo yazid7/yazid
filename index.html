@@ -682,29 +682,30 @@
     }
 
     // 👇 تاريخ ميلادك هنا
-    const age = calculateAge("1993-12-06");
+    const age = calculateAge("1990-12-06");
     document.getElementById("age").textContent = age;
     
-    // ✅ إظهار التاريخ والوقت فقط في الصفحة الرئيسية
+    
+    // ✅ عرض التاريخ والوقت بشكل منسق
     const isHome = window.location.pathname === "/" || window.location.pathname.endsWith("index.html");
     const datetimeDiv = document.getElementById("datetime");
 
     if (isHome) {
       function updateDateTime() {
         const now = new Date();
-        const options = {
+        const date = now.toLocaleDateString('en-GB', {
           weekday: 'long',
           year: 'numeric',
           month: 'long',
-          day: 'numeric',
+          day: 'numeric'
+        });
+        const time = now.toLocaleTimeString('en-GB', {
           hour: '2-digit',
           minute: '2-digit',
           second: '2-digit',
           hour12: false
-        };
-        const formatted = now.toLocaleDateString('en-GB', options);
-        const time = now.toLocaleTimeString('en-GB');
-        datetimeDiv.textContent = `${formatted} - ${time}`;
+        });
+        datetimeDiv.textContent = `${date} - ${time}`;
       }
 
       updateDateTime();
