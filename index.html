@@ -685,13 +685,13 @@
     const age = calculateAge("1993-12-06");
     document.getElementById("age").textContent = age;
     
-       // ✅ إظهار التاريخ والوقت فقط في الصفحة الرئيسية
-    const isHome = window.location.pathname === "/" || window.location.pathname.endsWith("index.html");
-    const datetimeDiv = document.getElementById("datetime");
+    // عرض التاريخ فقط في الصفحة الرئيسية
+    const isHomePage = window.location.pathname.endsWith('/') || window.location.pathname.endsWith('/index.html');
 
     if (isHomePage) {
       const datetimeDiv = document.getElementById("datetime");
       datetimeDiv.style.display = "block";
+
       function updateDateTime() {
         const now = new Date();
         const date = now.toLocaleDateString('en-GB', {
@@ -700,7 +700,7 @@
           month: 'long',
           day: 'numeric'
         });
-        const time = now.toLocaleTimeString('en-GB', {
+       const time = now.toLocaleTimeString('en-GB', {
           hour: '2-digit',
           minute: '2-digit',
           second: '2-digit',
@@ -708,11 +708,16 @@
         });
         datetimeDiv.textContent = `${date} - ${time}`;
       }
+       
+      
+
       updateDateTime();
       setInterval(updateDateTime, 1000);
-    } else {
-      datetimeDiv.style.display = 'none';
     }
+  
+  
+        
+        
   </script>
 
   <!-- Template Main JS File -->
