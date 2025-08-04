@@ -692,6 +692,7 @@
 
     if (isHomePage) {
       const datetimeDiv = document.getElementById("datetime");
+     if (!datetimeElement) return; // لا تعمل إذا لم يوجد العنصر
       datetimeDiv.style.display = "block";
 
       function updateDateTime() {
