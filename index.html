@@ -682,14 +682,13 @@
     }
 
     // 👇 تاريخ ميلادك هنا
-    const age = calculateAge("1990-12-06");
+    const age = calculateAge("1993-12-06");
     document.getElementById("age").textContent = age;
     
     
-    // ✅ عرض التاريخ والوقت بشكل منسق
-    const isHome = window.location.pathname === "/" || window.location.pathname.endsWith("index.html");
-    const datetimeDiv = document.getElementById("datetime");
 
+    // عرض التاريخ فقط في الصفحة الرئيسية
+    const isHomePage = window.location.pathname.endsWith('/') || window.location.pathname.endsWith('/index.html');
     if (isHome) {
       function updateDateTime() {
         const now = new Date();
