@@ -664,13 +664,20 @@
   <script src="https://yazid7.github.io/yazid/assets/vendor/venobox/venobox.min.js"></script>
   <script src="https://yazid7.github.io/yazid/assets/vendor/typed.js/typed.min.js"></script>
   <script type="text/javascript">
-    var typed = new
-    var typed = new Typed('.typing',{
-      strings: ["Coder", "Developer", "Installing surveillance cameras and alarms"],
-      loop: true,
-      typeSpeed: 65,
-      backSpeed: 65
+    
+  const isHome = window.location.pathname === "/" || window.location.pathname.endsWith("index.html");
+
+  if (isHome) {
+    document.addEventListener("DOMContentLoaded", function () {
+      new Typed('.typing', {
+        strings: ["Coder", "Developer", "Installing surveillance cameras and alarms"],
+        loop: true,
+        typeSpeed: 65,
+        backSpeed: 65
+      });
     });
+  }
+ 
   </script>
    <script>
     function calculateAge(birthDateStr) {
