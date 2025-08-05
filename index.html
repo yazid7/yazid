@@ -34,6 +34,34 @@
   ======================================================== -->
 </head>
 <style>
+ 
+  body.dark-mode {
+    background-color: #121212 !important;
+    color: #e0e0e0 !important;
+  }
+
+  body.dark-mode a {
+    color: #80cbc4 !important;
+  }
+
+  body.dark-mode .section-title h2,
+  body.dark-mode .info-box h3,
+  body.dark-mode .icon-box h4 {
+    color: #fff !important;
+  }
+
+  body.dark-mode .info-box,
+  body.dark-mode .icon-box {
+    background-color: #1e1e1e !important;
+  }
+
+  #darkModeToggle {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 9999;
+  }
+
  #datetime {
       margin-top: 10px;
       font-size: 1.1em;
@@ -45,7 +73,8 @@
  
   <!-- ======= Header ======= -->
   <header id="header" class="header-tops">
-    
+   
+    <button id="darkModeToggle" class="btn btn-sm btn-outline-light mt-3">🌙 Dark Mode</button>
     <div class="container">
  <div id="datetime" class="mb-2 fw-bold text-danger"></div>
      
@@ -724,6 +753,23 @@
     }
   </script>
 
+ <script>
+  const toggle = document.getElementById('darkModeToggle');
+  const body = document.body;
+
+  // استرجاع التفضيل من التخزين
+  if (localStorage.getItem('darkMode') === 'true') {
+    body.classList.add('dark-mode');
+    toggle.textContent = '☀️ Light Mode';
+  }
+
+  toggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    const isDark = body.classList.contains('dark-mode');
+    localStorage.setItem('darkMode', isDark);
+    toggle.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+  });
+</script>
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
