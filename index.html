@@ -47,8 +47,9 @@
  
   <!-- ======= Header ======= -->
   <header id="header" class="header-tops">
-   <div id="datetime" class="mb-2 fw-bold text-danger"></div>
+   
     <div class="container">
+     <div id="datetime" class="mb-2 fw-bold text-danger"></div>
       <h1><a href="https://yazid7.github.io/yazid/index.html"> Zenati Yazid <img src="https://yazid7.github.io/yazid/assets/img/cctv.png" class="img-fluid" alt="">
       </a></h1
       <h2 style="color:#fff">I'm <span class="typing" style="color:#12D640"></span></h2>
@@ -674,7 +675,9 @@
           strings: ["Coder", "Developer", "Installing surveillance cameras and alarms"],
           loop: true,
           typeSpeed: 65,
-          backSpeed: 65
+          backSpeed: 65,
+          cursorChar: '|',       // ✅ شكل المؤشر
+         
         });
         window.typingInitialized = true; // ✅ نعينه حتى لا يتكرر التنفيذ
       }
