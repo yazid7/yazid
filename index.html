@@ -2,454 +2,271 @@
 <html lang="en">
 
 <head>
+  <!-- Meta Tags -->
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   
   <title>Zenati Yazid - Surveillance Systems Expert</title>
-  <meta name="description" content="Yazid Zenati - Professional in surveillance systems and web development">
-  <meta name="keywords" content="Yazid Zenati, surveillance systems, CCTV, alarm systems, web development">
   
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="https://yazid7.github.io/yazid/assets/img/cctv.png">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="https://yazid7.github.io/yazid/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://yazid7.github.io/yazid/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
   <link href="https://yazid7.github.io/yazid/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="https://yazid7.github.io/yazid/assets/vendor/venobox/venobox.css" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
-  <link href="https://yazid7.github.io/yazid/assets/css/style.css" rel="stylesheet">
-
+  <!-- Main CSS -->
   <style>
-    #datetime {
-      margin-top: 10px;
-      font-size: 1.1em;
-      color: #800000;
+    /* General Styles */
+    :root {
+      --primary-color: #12D640;
+      --secondary-color: #2c3e50;
+      --dark-color: #343a40;
+      --light-color: #f8f9fa;
     }
     
-    /* Improved responsive design */
-    @media (max-width: 768px) {
-      .header-tops h1 img {
-        width: 40px;
-        height: 40px;
-      }
-      .social-links {
-        margin-top: 15px;
-      }
-      .nav-menu ul {
-        display: flex;
-        flex-direction: column;
-      }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: #212529;
+      overflow-x: hidden;
     }
     
-    /* Navigation active state */
-    .nav-menu ul li a.active {
-      color: #12D640 !important;
-      font-weight: bold;
-    }
-    
-    /* Smooth scrolling */
-    html {
-      scroll-behavior: smooth;
-    }
-    
-    /* Enhanced skills section */
-    .skills-box {
-      background: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      margin-bottom: 20px;
-    }
-    
-    .skill-item {
-      display: inline-block;
-      text-align: center;
-      margin: 10px;
-      vertical-align: top;
-    }
-    
-    .skill-item img {
-      margin-bottom: 8px;
-    }
-    
-    /* Modern contact form */
-    .contact-form input,
-    .contact-form textarea {
+    /* Header & Navigation */
+    #header {
+      background: var(--dark-color);
+      padding: 15px 0;
+      position: fixed;
       width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ddd;
-      border-radius: 4px;
+      top: 0;
+      z-index: 1000;
+      transition: all 0.5s;
     }
     
-    .contact-form button {
-      background: #12D640;
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
       color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: background 0.3s;
     }
     
-    .contact-form button:hover {
-      background: #0eb33a;
+    .nav-menu {
+      display: flex;
+      align-items: center;
+    }
+    
+    .nav-menu ul {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    
+    .nav-menu li {
+      position: relative;
+      padding: 0 15px;
+    }
+    
+    .nav-menu a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 10px 0;
+      position: relative;
+    }
+    
+    .nav-menu a:hover,
+    .nav-menu .active {
+      color: var(--primary-color);
+    }
+    
+    .nav-menu a:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: var(--primary-color);
+      bottom: 0;
+      left: 0;
+      transition: width 0.3s;
+    }
+    
+    .nav-menu a:hover:after,
+    .nav-menu .active:after {
+      width: 100%;
+    }
+    
+    /* Mobile Navigation */
+    .mobile-nav-toggle {
+      display: none;
+      color: white;
+      font-size: 28px;
+      cursor: pointer;
+    }
+    
+    @media (max-width: 991px) {
+      .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 80%;
+        height: calc(100vh - 70px);
+        background: var(--dark-color);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        transition: 0.3s;
+      }
+      
+      .nav-menu ul {
+        flex-direction: column;
+        width: 100%;
+      }
+      
+      .nav-menu li {
+        padding: 10px 0;
+      }
+      
+      .mobile-nav-toggle {
+        display: block;
+      }
+      
+      .nav-menu.mobile-active {
+        left: 0;
+      }
+    }
+    
+    /* Other Sections */
+    section {
+      padding: 80px 0;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .section-title h2 {
+      font-size: 2.5rem;
+      color: var(--secondary-color);
     }
   </style>
 </head>
 
 <body>
   <!-- ======= Header ======= -->
-  <header id="header" class="header-tops">
-    <div class="container">
-      <div id="datetime" class="mb-2 fw-bold text-danger"></div>
-      <h1>
-        <a href="index.html">
-          Zenati Yazid <img src="https://yazid7.github.io/yazid/assets/img/cctv.png" class="img-fluid" alt="CCTV Icon">
-        </a>
-      </h1>
-      <h2 style="color:#fff"><span class="typing" style="color:#12D640"></span></h2>
+  <header id="header">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="logo">
+        <a href="index.html">Zenati Yazid</a>
+      </div>
       
-      <nav class="nav-menu d-none d-lg-block">
+      <!-- Navigation -->
+      <nav class="nav-menu">
         <ul>
-          <li><a href="index.html">Home</a></li>
+          <li><a href="#header" class="active">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a href="https://drive.google.com/file/d/1q0QjqECyNnWQXKgt02tOilFWtZWoJT4S/view?usp=share_link" target="_blank">Resume</a></li>
         </ul>
       </nav>
-
-      <div class="social-links">
-        <a href="https://dz.linkedin.com/in/yazid-zenati-09528912b" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-        <a href="https://github.com/yazid7" target="_blank" class="github"><i class="bx bxl-github"></i></a>
-        <a href="https://instagram.com/alpha_technology7" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
+      
+      <div class="mobile-nav-toggle">
+        <i class="icofont-navigation-menu"></i>
       </div>
     </div>
-  </header><!-- End Header -->
+  </header>
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" style="padding-top: 100px;">
+    <div class="container">
+      <h1>Welcome to My Portfolio</h1>
+      <p>Security Systems Expert & Web Developer</p>
+    </div>
+  </section>
 
   <!-- ======= About Section ======= -->
-  <section id="about" class="about">
-    <div class="about-me container">
+  <section id="about">
+    <div class="container">
       <div class="section-title">
         <h2>About Me</h2>
-        <p>Learn more about me</p>
       </div>
-
-      <div class="row">
-        <div class="col-lg-4" data-aos="fade-right">
-          <img src="https://yazid7.github.io/yazid/assets/img/profile.jpg" class="img-fluid" alt="Yazid Zenati Profile">
-        </div>
-        <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-          <h3>Security Systems Specialist &amp; Web Developer</h3>
-          <p class="font-italic">
-            I am Yazid Zenati, <span id="age"></span> years old, from Algeria. My educational level is third secondary, experimental science.
-          </p>
-          <div class="row">
-            <div class="col-lg-6">
-              <ul>
-                <li><i class="icofont-rounded-right"></i> <strong>Birthday:</strong> 06 December 1993</li>
-                <li><i class="icofont-rounded-right"></i> <strong>Phone:</strong> +213 (0) 662-65-08-43</li>
-                <li><i class="icofont-rounded-right"></i> <strong>City:</strong> Ouled Chebel - Birtouta</li>
-              </ul>
-            </div>
-            <div class="col-lg-6">
-              <ul>
-                <li><i class="icofont-rounded-right"></i> <strong>Age:</strong> <span id="current-age"></span></li>
-                <li><i class="icofont-rounded-right"></i> <strong>Degree:</strong> Secondary Education</li>
-                <li><i class="icofont-rounded-right"></i> <strong>Email:</strong> alphatech7@protonmail.com</li>
-              </ul>
-            </div>
-          </div>
-          <p>
-            With extensive experience in surveillance systems installation and configuration, I specialize in creating secure environments through advanced CCTV solutions and alarm systems. I'm also passionate about web development and modern technologies.
-          </p>
-        </div>
-      </div>
+      <!-- About content here -->
     </div>
-  </section><!-- End About Section -->
+  </section>
 
   <!-- ======= Experience Section ======= -->
-  <section id="experience" class="services">
+  <section id="experience">
     <div class="container">
       <div class="section-title">
-        <h2>Professional Experience</h2>
-        <p>My work experience</p>
+        <h2>Experience</h2>
       </div>
-      <div class="row">
-        <div class="col-lg-12" data-aos="fade-up">
-          <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon"><i class="icofont-certificate-alt-1"></i></div>
-            <h4><a href="#">SONELTECH FORMATION</a></h4>
-            <h5>June 2017</h5>
-            <p><em>Systeme d'alarme et camera de surveillance</em></p>
-            <ul>
-              <li>Installing various types of surveillance cameras (dome, bullet, PTZ)</li>
-              <li>Configuring DVR and NVR recording systems</li>
-              <li>Remote monitoring setup for mobile devices</li>
-              <li>Troubleshooting and maintenance of security systems</li>
-            </ul>
-          </div>
-          
-          <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon"><i class="icofont-settings"></i></div>
-            <h4><a href="#">ETUDES REALISATIONS SYSTEMS ER ATLAS</a></h4>
-            <h5>June 2019 - October 2019</h5>
-            <p><em>Surveillance Camera Installation Technician</em></p>
-            <ul>
-              <li>Installed and configured advanced surveillance systems</li>
-              <li>Specialized in PTZ camera installations</li>
-              <li>Implemented smart locking systems integration</li>
-              <li>Conducted site surveys and system design</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      <!-- Experience content here -->
     </div>
-  </section><!-- End Experience Section -->
+  </section>
 
   <!-- ======= Skills Section ======= -->
-  <section id="skills" class="services">
+  <section id="skills">
     <div class="container">
       <div class="section-title">
-        <h2>Technical Skills</h2>
-        <p>My technical abilities</p>
+        <h2>Skills</h2>
       </div>
-      <div class="row">
-        <div class="col-lg-12" data-aos="fade-up">
-          
-          <div class="skills-box">
-            <h4>Security Systems Expertise</h4>
-            <div class="skills-list">
-              <div class="skill-item">
-                <img src="https://cdn-icons-png.flaticon.com/512/2777/2777154.png" alt="CCTV" width="60">
-                <span>CCTV Installation</span>
-              </div>
-              <div class="skill-item">
-                <img src="https://cdn-icons-png.flaticon.com/512/3048/3048127.png" alt="Alarm" width="60">
-                <span>Alarm Systems</span>
-              </div>
-              <div class="skill-item">
-                <img src="https://cdn-icons-png.flaticon.com/512/2933/2933245.png" alt="DVR" width="60">
-                <span>DVR/NVR Configuration</span>
-              </div>
-              <div class="skill-item">
-                <img src="https://cdn-icons-png.flaticon.com/512/2885/2885257.png" alt="Smart Locks" width="60">
-                <span>Smart Lock Systems</span>
-              </div>
-            </div>
-          </div>
-          
-          <div class="skills-box">
-            <h4>Web Development</h4>
-            <div class="skills-list">
-              <div class="skill-item">
-                <img src="https://www.vectorlogo.zone/logos/w3_html5/w3_html5-ar21.svg" alt="HTML5" width="100">
-                <span>HTML5</span>
-              </div>
-              <div class="skill-item">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS3" width="70">
-                <span>CSS3</span>
-              </div>
-              <div class="skill-item">
-                <img src="https://www.vectorlogo.zone/logos/getbootstrap/getbootstrap-ar21.svg" alt="Bootstrap" width="100">
-                <span>Bootstrap</span>
-              </div>
-            </div>
-          </div>
-          
-          <div class="skills-box">
-            <h4>Tools & Technologies</h4>
-            <div class="skills-list">
-              <div class="skill-item">
-                <img src="https://www.vectorlogo.zone/logos/linux/linux-ar21.svg" alt="Linux" width="100">
-                <span>Linux</span>
-              </div>
-              <div class="skill-item">
-                <img src="https://www.vectorlogo.zone/logos/microsoft/microsoft-ar21.svg" alt="Windows" width="100">
-                <span>Windows</span>
-              </div>
-              <div class="skill-item">
-                <img src="https://www.vectorlogo.zone/logos/torproject/torproject-ar21.svg" alt="Tor" width="100">
-                <span>Tor</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <!-- Skills content here -->
     </div>
-  </section><!-- End Skills Section -->
+  </section>
 
   <!-- ======= Contact Section ======= -->
-  <section id="contact" class="contact">
+  <section id="contact">
     <div class="container">
       <div class="section-title">
         <h2>Contact</h2>
-        <p>Get in Touch</p>
       </div>
-
-      <div class="row mt-2">
-        <div class="col-md-6 d-flex align-items-stretch">
-          <div class="info-box">
-            <i class="bx bx-map"></i>
-            <h3>My Address</h3>
-            <p>Ouled Chebel N°:84, Birtouta, Algeria</p>
-          </div>
-        </div>
-
-        <div class="col-md-6 mt-4 mt-md-0 d-flex align-items-stretch">
-          <div class="info-box">
-            <i class="bx bx-share-alt"></i>
-            <h3>Social Profiles</h3>
-            <div class="social-links">
-              <a href="https://dz.linkedin.com/in/yazid-zenati-09528912b" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-              <a href="https://github.com/yazid7" target="_blank" class="github"><i class="bx bxl-github"></i></a>
-              <a href="mailto:alphatech7@protonmail.com" class="envelope"><i class="bx bx-envelope"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 mt-4 d-flex align-items-stretch">
-          <div class="info-box">
-            <i class="bx bx-envelope"></i>
-            <h3>Email Me</h3>
-            <a href="mailto:alphatech7@protonmail.com">alphatech7@protonmail.com</a>
-          </div>
-        </div>
-        
-        <div class="col-md-6 mt-4 d-flex align-items-stretch">
-          <div class="info-box">
-            <i class="bx bx-phone-call"></i>
-            <h3>Call Me</h3>
-            <p>+213 (0) 662-65-08-43</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="row mt-5">
-        <div class="col-lg-12">
-          <form class="contact-form">
-            <div class="form-row">
-              <div class="col-md-6 form-group">
-                <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-              </div>
-              <div class="col-md-6 form-group">
-                <input type="email" name="email" class="form-control" placeholder="Your Email" required>
-              </div>
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" name="subject" placeholder="Subject" required>
-            </div>
-            <div class="form-group">
-              <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-            </div>
-            <div class="text-center">
-              <button type="submit">Send Message</button>
-            </div>
-          </form>
-        </div>
-      </div>
+      <!-- Contact content here -->
     </div>
-  </section><!-- End Contact Section -->
+  </section>
 
   <!-- Vendor JS Files -->
-  <script src="https://yazid7.github.io/yazid/assets/vendor/jquery/jquery.min.js"></script>
-  <script src="https://yazid7.github.io/yazid/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="https://yazid7.github.io/yazid/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-  <script src="https://yazid7.github.io/yazid/assets/vendor/typed.js/typed.min.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Main JS File -->
   <script>
-    // Age calculation
-    function calculateAge(birthDateStr) {
-      const birthDate = new Date(birthDateStr);
-      const today = new Date();
-      let age = today.getFullYear() - birthDate.getFullYear();
-      const m = today.getMonth() - birthDate.getMonth();
-      if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-        age--;
-      }
-      return age;
-    }
-
-    const age = calculateAge("1993-12-06");
-    document.getElementById("age").textContent = age;
-    document.getElementById("current-age").textContent = age;
-
-    // Date and time display
-    function updateDateTime() {
-      const now = new Date();
-      const options = {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-        hour12: false
-      };
-      const formatted = now.toLocaleString('en-GB', options);
-      document.getElementById("datetime").textContent = formatted;
-    }
-    
-    updateDateTime();
-    setInterval(updateDateTime, 1000);
-
-    // Typing animation
-    document.addEventListener("DOMContentLoaded", function() {
-      new Typed('.typing', {
-        strings: [
-          "Security Systems Expert", 
-          "CCTV Specialist",
-          "Alarm Systems Technician",
-          "Web Developer"
-        ],
-        loop: true,
-        typeSpeed: 65,
-        backSpeed: 65,
-        cursorChar: '|'
-      });
-    });
-
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-        
-        // Update active state in navigation
-        document.querySelectorAll('.nav-menu ul li a').forEach(link => {
-          link.classList.remove('active');
-        });
-        this.classList.add('active');
-      });
-    });
-
-    // Set active nav item based on scroll position
-    window.addEventListener('scroll', function() {
-      const scrollPosition = window.scrollY;
+    // Mobile Navigation
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+      const navMenu = document.querySelector('.nav-menu');
       
-      document.querySelectorAll('section').forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        const sectionHeight = section.offsetHeight;
-        const sectionId = section.getAttribute('id');
+      mobileNavToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('mobile-active');
+      });
+      
+      // Close mobile menu when clicking on a nav link
+      document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', function() {
+          navMenu.classList.remove('mobile-active');
+        });
+      });
+      
+      // Add active class to current section in nav
+      window.addEventListener('scroll', function() {
+        const scrollPosition = window.scrollY;
         
-        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-          document.querySelectorAll('.nav-menu ul li a').forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${sectionId}`) {
-              link.classList.add('active');
-            }
-          });
-        }
+        document.querySelectorAll('section').forEach(section => {
+          const sectionTop = section.offsetTop - 100;
+          const sectionHeight = section.offsetHeight;
+          const sectionId = section.getAttribute('id');
+          
+          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            document.querySelectorAll('.nav-menu a').forEach(link => {
+              link.classList.remove('active');
+              if (link.getAttribute('href') === `#${sectionId}`) {
+                link.classList.add('active');
+              }
+            });
+          }
+        });
       });
     });
   </script>
