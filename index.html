@@ -39,6 +39,21 @@
       .social-links {
         margin-top: 15px;
       }
+      .nav-menu ul {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    
+    /* Navigation active state */
+    .nav-menu ul li a.active {
+      color: #12D640 !important;
+      font-weight: bold;
+    }
+    
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
     }
     
     /* Enhanced skills section */
@@ -48,6 +63,17 @@
       border-radius: 8px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
       margin-bottom: 20px;
+    }
+    
+    .skill-item {
+      display: inline-block;
+      text-align: center;
+      margin: 10px;
+      vertical-align: top;
+    }
+    
+    .skill-item img {
+      margin-bottom: 8px;
     }
     
     /* Modern contact form */
@@ -67,6 +93,11 @@
       padding: 10px 20px;
       border-radius: 4px;
       cursor: pointer;
+      transition: background 0.3s;
+    }
+    
+    .contact-form button:hover {
+      background: #0eb33a;
     }
   </style>
 </head>
@@ -77,7 +108,7 @@
     <div class="container">
       <div id="datetime" class="mb-2 fw-bold text-danger"></div>
       <h1>
-        <a href="https://yazid7.github.io/yazid/index.html">
+        <a href="index.html">
           Zenati Yazid <img src="https://yazid7.github.io/yazid/assets/img/cctv.png" class="img-fluid" alt="CCTV Icon">
         </a>
       </h1>
@@ -85,12 +116,12 @@
       
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="#header"><span>Home</span></a></li>
-          <li><a href="#about"><span>About</span></a></li>
-          <li><a href="#experience"><span>Experience</span></a></li>
-          <li><a href="#skills"><span>Skills</span></a></li>
-          <li><a href="https://drive.google.com/file/d/1q0QjqECyNnWQXKgt02tOilFWtZWoJT4S/view?usp=share_link" target="_blank"><span>Resume-CV</span></a></li>
-          <li><a href="#contacts"><span>Contact</span></a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="https://drive.google.com/file/d/1q0QjqECyNnWQXKgt02tOilFWtZWoJT4S/view?usp=share_link" target="_blank">Resume</a></li>
         </ul>
       </nav>
 
@@ -106,7 +137,8 @@
   <section id="about" class="about">
     <div class="about-me container">
       <div class="section-title">
-        <h2>About</h2>
+        <h2>About Me</h2>
+        <p>Learn more about me</p>
       </div>
 
       <div class="row">
@@ -114,23 +146,28 @@
           <img src="https://yazid7.github.io/yazid/assets/img/profile.jpg" class="img-fluid" alt="Yazid Zenati Profile">
         </div>
         <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-          <p>I am Yazid Zenati, <span id="age"></span> years old, from Algeria. My educational level is third secondary, experimental science. I am passionate about modern technology, security systems, and web development.</p>
+          <h3>Security Systems Specialist &amp; Web Developer</h3>
+          <p class="font-italic">
+            I am Yazid Zenati, <span id="age"></span> years old, from Algeria. My educational level is third secondary, experimental science.
+          </p>
           <div class="row">
             <div class="col-lg-6">
               <ul>
                 <li><i class="icofont-rounded-right"></i> <strong>Birthday:</strong> 06 December 1993</li>
                 <li><i class="icofont-rounded-right"></i> <strong>Phone:</strong> +213 (0) 662-65-08-43</li>
+                <li><i class="icofont-rounded-right"></i> <strong>City:</strong> Ouled Chebel - Birtouta</li>
               </ul>
             </div>
             <div class="col-lg-6">
               <ul>
-                <li><i class="icofont-rounded-right"></i> <strong>City:</strong> Ouled Chebel - Birtouta</li>
+                <li><i class="icofont-rounded-right"></i> <strong>Age:</strong> <span id="current-age"></span></li>
+                <li><i class="icofont-rounded-right"></i> <strong>Degree:</strong> Secondary Education</li>
                 <li><i class="icofont-rounded-right"></i> <strong>Email:</strong> alphatech7@protonmail.com</li>
               </ul>
             </div>
           </div>
           <p>
-            With extensive experience in surveillance systems installation and configuration, I specialize in creating secure environments through advanced CCTV solutions and alarm systems.
+            With extensive experience in surveillance systems installation and configuration, I specialize in creating secure environments through advanced CCTV solutions and alarm systems. I'm also passionate about web development and modern technologies.
           </p>
         </div>
       </div>
@@ -142,14 +179,16 @@
     <div class="container">
       <div class="section-title">
         <h2>Professional Experience</h2>
+        <p>My work experience</p>
       </div>
       <div class="row">
         <div class="col-lg-12" data-aos="fade-up">
           <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
-            <h4 style="text-align:left;"><a href="https://www.asu.edu/" style="color:#12d640">ATTESTATION DE QUALIFICATION (SONELTECH FORMATION)</a></h4>
-            <h5 style="text-align:left;">15 June 2017</h5>
-            <p style="text-align:left;color:#fff"><em>Systeme d'alarme et camera de surveillance</em></p>
-            <ul style="text-align:left;">
+            <div class="icon"><i class="icofont-certificate-alt-1"></i></div>
+            <h4><a href="#">SONELTECH FORMATION</a></h4>
+            <h5>June 2017</h5>
+            <p><em>Systeme d'alarme et camera de surveillance</em></p>
+            <ul>
               <li>Installing various types of surveillance cameras (dome, bullet, PTZ)</li>
               <li>Configuring DVR and NVR recording systems</li>
               <li>Remote monitoring setup for mobile devices</li>
@@ -157,11 +196,12 @@
             </ul>
           </div>
           
-          <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
-            <h4 style="text-align:left;"><a href="https://www.augmenify.com/" style="color:#12d640">ETUDES REALISATIONS SYSTEMS ER ATLAS</a></h4>
-            <h5 style="text-align:left;">June 2019 - October 2019</h5>
-            <p style="text-align:left;color:#fff"><em>Surveillance Camera Installation Technician</em></p>
-            <ul style="text-align:left;">
+          <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon"><i class="icofont-settings"></i></div>
+            <h4><a href="#">ETUDES REALISATIONS SYSTEMS ER ATLAS</a></h4>
+            <h5>June 2019 - October 2019</h5>
+            <p><em>Surveillance Camera Installation Technician</em></p>
+            <ul>
               <li>Installed and configured advanced surveillance systems</li>
               <li>Specialized in PTZ camera installations</li>
               <li>Implemented smart locking systems integration</li>
@@ -178,12 +218,13 @@
     <div class="container">
       <div class="section-title">
         <h2>Technical Skills</h2>
+        <p>My technical abilities</p>
       </div>
       <div class="row">
         <div class="col-lg-12" data-aos="fade-up">
           
           <div class="skills-box">
-            <h4 style="text-align:left;color:#09203a">Security Systems Expertise</h4>
+            <h4>Security Systems Expertise</h4>
             <div class="skills-list">
               <div class="skill-item">
                 <img src="https://cdn-icons-png.flaticon.com/512/2777/2777154.png" alt="CCTV" width="60">
@@ -205,21 +246,39 @@
           </div>
           
           <div class="skills-box">
-            <h4 style="text-align:left;color:#09203a">Web Development</h4>
-            <p style="text-align:left;">
-              <img src="https://www.vectorlogo.zone/logos/w3_html5/w3_html5-ar21.svg" alt="HTML5">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS3" height="60" width="90">
-              <img src="https://www.vectorlogo.zone/logos/getbootstrap/getbootstrap-ar21.svg" alt="Bootstrap">
-            </p>
+            <h4>Web Development</h4>
+            <div class="skills-list">
+              <div class="skill-item">
+                <img src="https://www.vectorlogo.zone/logos/w3_html5/w3_html5-ar21.svg" alt="HTML5" width="100">
+                <span>HTML5</span>
+              </div>
+              <div class="skill-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS3" width="70">
+                <span>CSS3</span>
+              </div>
+              <div class="skill-item">
+                <img src="https://www.vectorlogo.zone/logos/getbootstrap/getbootstrap-ar21.svg" alt="Bootstrap" width="100">
+                <span>Bootstrap</span>
+              </div>
+            </div>
           </div>
           
           <div class="skills-box">
-            <h4 style="text-align:left;color:#09203a">Tools & Technologies</h4>
-            <p style="text-align:left;">
-              <img src="https://www.vectorlogo.zone/logos/linux/linux-ar21.svg" alt="Linux">
-              <img src="https://www.vectorlogo.zone/logos/microsoft/microsoft-ar21.svg" alt="Windows">
-              <img src="https://www.vectorlogo.zone/logos/torproject/torproject-ar21.svg" alt="Tor">
-            </p>
+            <h4>Tools & Technologies</h4>
+            <div class="skills-list">
+              <div class="skill-item">
+                <img src="https://www.vectorlogo.zone/logos/linux/linux-ar21.svg" alt="Linux" width="100">
+                <span>Linux</span>
+              </div>
+              <div class="skill-item">
+                <img src="https://www.vectorlogo.zone/logos/microsoft/microsoft-ar21.svg" alt="Windows" width="100">
+                <span>Windows</span>
+              </div>
+              <div class="skill-item">
+                <img src="https://www.vectorlogo.zone/logos/torproject/torproject-ar21.svg" alt="Tor" width="100">
+                <span>Tor</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -227,17 +286,18 @@
   </section><!-- End Skills Section -->
 
   <!-- ======= Contact Section ======= -->
-  <section id="contacts" class="contact">
+  <section id="contact" class="contact">
     <div class="container">
       <div class="section-title">
-        <h2>Contact Me</h2>
+        <h2>Contact</h2>
+        <p>Get in Touch</p>
       </div>
 
       <div class="row mt-2">
         <div class="col-md-6 d-flex align-items-stretch">
           <div class="info-box">
             <i class="bx bx-map"></i>
-            <h3>Address</h3>
+            <h3>My Address</h3>
             <p>Ouled Chebel N°:84, Birtouta, Algeria</p>
           </div>
         </div>
@@ -257,7 +317,7 @@
         <div class="col-md-6 mt-4 d-flex align-items-stretch">
           <div class="info-box">
             <i class="bx bx-envelope"></i>
-            <h3>Email</h3>
+            <h3>Email Me</h3>
             <a href="mailto:alphatech7@protonmail.com">alphatech7@protonmail.com</a>
           </div>
         </div>
@@ -265,7 +325,7 @@
         <div class="col-md-6 mt-4 d-flex align-items-stretch">
           <div class="info-box">
             <i class="bx bx-phone-call"></i>
-            <h3>Call</h3>
+            <h3>Call Me</h3>
             <p>+213 (0) 662-65-08-43</p>
           </div>
         </div>
@@ -276,17 +336,17 @@
           <form class="contact-form">
             <div class="form-row">
               <div class="col-md-6 form-group">
-                <input type="text" name="name" class="form-control" placeholder="Your Name">
+                <input type="text" name="name" class="form-control" placeholder="Your Name" required>
               </div>
               <div class="col-md-6 form-group">
-                <input type="email" name="email" class="form-control" placeholder="Your Email">
+                <input type="email" name="email" class="form-control" placeholder="Your Email" required>
               </div>
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" name="subject" placeholder="Subject">
+              <input type="text" class="form-control" name="subject" placeholder="Subject" required>
             </div>
             <div class="form-group">
-              <textarea class="form-control" name="message" rows="5" placeholder="Message"></textarea>
+              <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
             </div>
             <div class="text-center">
               <button type="submit">Send Message</button>
@@ -316,7 +376,9 @@
       return age;
     }
 
-    document.getElementById("age").textContent = calculateAge("1993-12-06");
+    const age = calculateAge("1993-12-06");
+    document.getElementById("age").textContent = age;
+    document.getElementById("current-age").textContent = age;
 
     // Date and time display
     function updateDateTime() {
@@ -351,6 +413,43 @@
         typeSpeed: 65,
         backSpeed: 65,
         cursorChar: '|'
+      });
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+        
+        // Update active state in navigation
+        document.querySelectorAll('.nav-menu ul li a').forEach(link => {
+          link.classList.remove('active');
+        });
+        this.classList.add('active');
+      });
+    });
+
+    // Set active nav item based on scroll position
+    window.addEventListener('scroll', function() {
+      const scrollPosition = window.scrollY;
+      
+      document.querySelectorAll('section').forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute('id');
+        
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+          document.querySelectorAll('.nav-menu ul li a').forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${sectionId}`) {
+              link.classList.add('active');
+            }
+          });
+        }
       });
     });
   </script>
