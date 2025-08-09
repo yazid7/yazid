@@ -441,10 +441,11 @@
   }
 }
 
-/* العنوان الرئيسي - النسخة المحسنة */
+ /* العنوان الرئيسي - الإصدار المعدّل */
         .honeycomb-main-header {
-            margin: 40px auto 50px;
+            margin: 40px auto;
             position: relative;
+            text-align: center;
         }
         
         .honeycomb-main-header h1 {
@@ -454,135 +455,43 @@
             background: linear-gradient(to bottom, #FFD700, #F9A825);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            padding: 10px 40px;
+            padding: 15px 50px;
             border: 3px solid #8B4513;
             border-radius: 60px;
-            box-shadow: 0 10px 25px rgba(139, 69, 19, 0.2);
+            box-shadow: 
+                0 5px 15px rgba(139, 69, 19, 0.2),
+                inset 0 0 10px rgba(255, 215, 0, 0.3);
             position: relative;
             z-index: 1;
+            font-family: 'Tajawal', sans-serif;
         }
         
-        .honeycomb-main-header h1::before {
+        /* إطار ثابت بدلاً من الدوار */
+        .honeycomb-main-header h1::after {
             content: "";
             position: absolute;
-            top: -15px;
-            left: -15px;
-            right: -15px;
-            bottom: -15px;
-            border: 2px dashed #FFD700;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border: 2px dashed rgba(255, 215, 0, 0.7);
             border-radius: 70px;
             z-index: -1;
-            animation: rotate 20s linear infinite;
         }
         
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        /* شبكة خلايا النحل - التصميم السداسي المتكامل */
-        .honeycomb-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-        }
-        
-        .honeycomb-hexagon {
-            width: 180px;
-            height: 200px;
-            margin: 0 -25px 10px;
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            background: linear-gradient(135deg, #FFD700, #F9A825);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.4s;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .honeycomb-hexagon:nth-child(2) {
-            transform: translateY(100px);
-        }
-        
-        .honeycomb-hexagon:hover {
-            transform: scale(1.1) !important;
-            z-index: 10;
-            background: linear-gradient(135deg, #FFC300, #F57F17);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-        }
-        
-        .honeycomb-hexagon::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('https://www.transparenttextures.com/patterns/hexellence.png');
-            opacity: 0.1;
-        }
-        
-        .honeycomb-icon {
-            font-size: 50px;
-            color: #8B4513;
-            margin-bottom: 15px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            transition: all 0.3s;
-        }
-        
-        .honeycomb-title {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: #5D4037;
-            margin: 0;
-            padding: 0 10px;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
-        }
-        
-        /* تأثيرات نحلية إضافية */
-        .bee {
+        /* تأثيرات النحلات */
+        .bee-float {
             position: absolute;
             font-size: 24px;
-            animation: fly 8s linear infinite;
-            opacity: 0.7;
-            z-index: 5;
+            animation: float 3s ease-in-out infinite;
         }
         
-        @keyframes fly {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(100px, -50px) rotate(10deg); }
-            50% { transform: translate(200px, 0) rotate(0deg); }
-            75% { transform: translate(100px, 50px) rotate(-10deg); }
-            100% { transform: translate(0, 0) rotate(0deg); }
-        }
+        .bee-1 { top: -20px; right: 20%; animation-delay: 0s; }
+        .bee-2 { bottom: -15px; left: 25%; animation-delay: 1s; }
         
-        /* التكيف مع الشاشات الصغيرة */
-        @media (max-width: 768px) {
-            .honeycomb-hexagon {
-                width: 140px;
-                height: 160px;
-                margin: 0 -20px 10px;
-            }
-            
-            .honeycomb-hexagon:nth-child(2) {
-                transform: translateY(80px);
-            }
-            
-            .honeycomb-icon {
-                font-size: 40px;
-            }
-            
-            .honeycomb-title {
-                font-size: 1.1rem;
-            }
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(5deg); }
         }
 
 
@@ -886,13 +795,15 @@
             </div>
         </div>    
 
-               <!-- العنوان الرئيسي المحسن -->
+    <!-- العنوان المعدّل -->
     <div class="honeycomb-main-header">
         <h1>
-            <i class="fas fa-honey-pot"></i>
+            <i class="fas fa-crown"></i>
             مملكة النحل والعسل
-            <i class="fas fa-bee"></i>
+            <i class="fas fa-honey-pot"></i>
         </h1>
+        <div class="bee-float">🐝</div>
+        <div class="bee-float bee-2">🐝</div>
     </div>
     
     <!-- شبكة خلايا النحل السداسية -->
