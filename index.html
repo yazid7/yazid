@@ -538,6 +538,10 @@
   75% { transform: translate(50px, -30px); }
   100% { transform: translate(0, 0); }
 }            
+.skill-icon i {
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+    }
     </style>
 </head>
 <body>
@@ -858,7 +862,7 @@
           <div class="col-md-4 skill-item">
             <div class="skill-card">
               <div class="skill-icon">
-                <i class="fas fa-honey-pot"></i>
+                <i class="fas fa-jar"></i>
               </div>
               <h4>إنتاج العسل</h4>
               <ul>
@@ -873,7 +877,7 @@
           <div class="col-md-4 skill-item">
             <div class="skill-card">
               <div class="skill-icon">
-                <i class="fas fa-queen"></i>
+                <i class="fas fa-crown"></i>
               </div>
               <h4>تربية الملكات</h4>
               <ul>
@@ -902,12 +906,15 @@
       </div>
     </div>
   </div>
-       <!-- أضف قبل غلق قسم تربية النحل -->
-<div class="bee-animation" style="top: 20%; left: 10%;">
-  <i class="fas fa-bee"></i>
-</div>
-<div class="bee-animation" style="top: 70%; left: 80%; animation-delay: 2s;">
-  <i class="fas fa-bee"></i>
+<div id="bee-animation-container" style="position: relative; height: 0; overflow: visible;">
+  <i class="fas fa-bee" style="
+    position: absolute;
+    font-size: 1.5rem;
+    color: #FFD700;
+    animation: fly 10s linear infinite;
+    top: 50%;
+    left: 10%;
+  "></i>
 </div>
          
 </section>
