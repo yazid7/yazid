@@ -261,15 +261,7 @@
   margin-bottom: 8px;
 }
 
-/* عندما يكون العنصر مفتوحًا */
-.expandable-card.active .card-content {
-  max-height: 500px; /* يمكن تعديله حسب المحتوى */
-  padding: 20px;
-}
 
-.expandable-card.active .toggle-icon {
-  transform: rotate(180deg);
-}
             
     </style>
 </head>
@@ -480,30 +472,14 @@
                     </div>
                 </div>
                 
-                <div class="col-md-4">
-                    <div class="expandable-card">
-                        <div class="card-header" onclick="toggleCard(this)">
+                               <div class="col-md-4">
+                    <div class="skill-category">
                         <h4 class="text-center mb-4">Tools & Technologies</h4>
-                        <i class="fas fa-chevron-down" id="tools-icon"></i>
                         <div class="row">
-                            <div class="skill-content" id="tools-content">
+                            <div class="col-6">
                                 <div class="skill-item">
-                                    
                                     <img src="https://www.vectorlogo.zone/logos/linux/linux-icon.svg" alt="Linux">
-                                    <p>
-‫ما هو لينكس وما هو استخدامه؟ (التعرف على نظام التشغيل Linux)‬‎
-نظام لينكس هو نظام تشغيل حر ومفتوح المصدر، شبيه بيونكس، ويعتبر من أكثر الأنظمة استخداماً في العالم، وخاصة في الخوادم والأجهزة المضمنة. يتميز بالمرونة والأمان والقابلية للتخصيص، مما يجعله خياراً شائعاً في مختلف المجالات.
-تفصيل:
-نظام تشغيل حر ومفتوح المصدر:
-يعني أن كود المصدر الخاص به متاح للجميع ويمكن تعديله وتوزيعه بحرية، وفقًا لويكيبيديا. 
-شبيه بيونكس:
-يتبع نفس المفاهيم الأساسية لنظام التشغيل يونكس، مع العديد من الميزات الإضافية، وفقًا لويكيبيديا. 
-نواة (Kernel):
-هو المكون الأساسي لنظام التشغيل الذي يدير الموارد والأجهزة، حسب كاسبرسكي. 
-توزيعات (Distributions):
-هي حزم من نظام التشغيل تتضمن النواة ومجموعة من البرامج والأدوات، مثل أوبنتو، فيدورا، ديبيان، وغيرها. 
-الاستخدامات:
-يشمل الاستخدامات الشائعة للخوادم، والأجهزة المضمنة (مثل الهواتف الذكية وأجهزة التلفزيون)، وأجهزة سطح المكتب، والحواسيب العملاقة، وفقًا لأوراكل</p>
+                                    <p>Linux</p>
                                 </div>
                             </div>
                             <div class="col-6">
@@ -689,18 +665,6 @@
         // تحديث كل ثانية
         setInterval(updateClock, 1000);
     </script>
-<script>
-    function toggleCard(element) {
-  const card = element.closest('.expandable-card');
-  card.classList.toggle('active');
-  
-  // إغلاق البطاقات الأخرى إذا كنت تريد ذلك
-  document.querySelectorAll('.expandable-card').forEach(otherCard => {
-    if (otherCard !== card) {
-      otherCard.classList.remove('active');
-    }
-  });
-}
-</script>
+
 </body>
 </html>
