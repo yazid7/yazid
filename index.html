@@ -440,8 +440,105 @@
     height: 35px;
   }
 }
-      
-            
+
+/* تنسيق عام للقسم */
+.bee-category {
+  background: rgba(255, 243, 176, 0.2);
+  border-radius: 15px;
+  overflow: hidden;
+  margin-top: 30px;
+  border: 1px solid #FFD700;
+}
+
+/* عنوان القسم */
+.category-header {
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  color: #fff;
+  padding: 15px 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category-header h3 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.category-header i {
+  transition: transform 0.3s ease;
+}
+
+/* محتوى القسم */
+.category-content {
+  padding: 20px;
+  display: none; /* مخفي بشكل افتراضي */
+}
+
+.bee-category.active .category-content {
+  display: block;
+  animation: fadeIn 0.5s ease;
+}
+
+.bee-category.active .category-header i {
+  transform: rotate(180deg);
+}
+
+/* بطاقات المهارات */
+.skill-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  height: 100%;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+}
+
+.skill-icon {
+  font-size: 2.5rem;
+  color: #FFA500;
+  margin-bottom: 15px;
+}
+
+.skill-card h4 {
+  color: #8B4513;
+  margin-bottom: 15px;
+}
+
+.skill-card ul {
+  padding-left: 20px;
+  color: #555;
+}
+
+.skill-card li {
+  margin-bottom: 8px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+        
+/* نحلة متحركة */
+.bee-animation {
+  position: absolute;
+  font-size: 1.2rem;
+  animation: fly 15s linear infinite;
+  opacity: 0.7;
+}
+
+@keyframes fly {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(50px, 30px); }
+  50% { transform: translate(100px, 0); }
+  75% { transform: translate(50px, -30px); }
+  100% { transform: translate(0, 0); }
+}            
     </style>
 </head>
 <body>
@@ -480,7 +577,7 @@
         </div>
     </nav>
 <!-- الساعة الجديدة -->
-    <div class="top-clock"style="padding: 3px 0;">
+    <div class="top-clock">
         <div class="clock-container">
             <div class="time-display" id="current-time"></div>
             <div class="date-display" id="current-date"></div>
@@ -743,6 +840,80 @@
         </div>
     </section>
 
+    <!-- أضف قبل غلق قسم تربية النحل -->
+<div class="bee-animation" style="top: 20%; left: 10%;">
+  <i class="fas fa-bee"></i>
+</div>
+<div class="bee-animation" style="top: 70%; left: 80%; animation-delay: 2s;">
+  <i class="fas fa-bee"></i>
+</div>
+    
+<section id="skills" class="skills-section">
+  <div class="container">
+    <!-- الأقسام الأخرى... -->
+    
+    <!-- قسم تربية النحل -->
+    <div class="skill-category bee-category">
+      <div class="category-header" onclick="toggleCategory('bee-skills')">
+        <h3>
+          <i class="fas fa-bee"></i>
+          تربية النحل وتربية الملكات
+        </h3>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      
+      <div class="category-content" id="bee-skills">
+        <div class="row">
+          <!-- مهارة 1 -->
+          <div class="col-md-4 skill-item">
+            <div class="skill-card">
+              <div class="skill-icon">
+                <i class="fas fa-honey-pot"></i>
+              </div>
+              <h4>إنتاج العسل</h4>
+              <ul>
+                <li>تحديد مواسم الجني المثلى</li>
+                <li>ضبط تركيز الرطوبة</li>
+                <li>فصل العسل حسب المصدر النباتي</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- مهارة 2 -->
+          <div class="col-md-4 skill-item">
+            <div class="skill-card">
+              <div class="skill-icon">
+                <i class="fas fa-queen"></i>
+              </div>
+              <h4>تربية الملكات</h4>
+              <ul>
+                <li>اختيار السلالات الممتازة</li>
+                <li>التلقيح الاصطناعي</li>
+                <li>إدارة بيوت التربية</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- مهارة 3 -->
+          <div class="col-md-4 skill-item">
+            <div class="skill-card">
+              <div class="skill-icon">
+                <i class="fas fa-clinic-medical"></i>
+              </div>
+              <h4>الرعاية الصحية</h4>
+              <ul>
+                <li>تشخيص الأمراض الشائعة</li>
+                <li>الوقاية من طفيليات الفاروا</li>
+                <li>التغذية العلاجية</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    
     <!-- Image Slider Section -->
 <section id="portfolio-slider" class="py-5">
   <div class="container">
@@ -995,5 +1166,19 @@
   marquee.innerHTML += marquee.innerHTML;
 });
     </script>
+<script>
+    function toggleCategory(id) {
+  const category = document.getElementById(id).parentElement;
+  category.classList.toggle('active');
+  
+  // إغلاق الأقسام الأخرى إذا كنت تريد ذلك
+  document.querySelectorAll('.skill-category').forEach(otherCategory => {
+    if (otherCategory !== category) {
+      otherCategory.classList.remove('active');
+    }
+  });
+    }
+</script>
+    
 </body>
 </html>
