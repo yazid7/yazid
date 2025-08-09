@@ -368,6 +368,79 @@
     padding: 10px;
   }
     }
+
+
+
+
+
+.marquee-section {
+  background: rgba(18, 214, 64, 0.05);
+  border-top: 1px solid rgba(18, 214, 64, 0.1);
+  border-bottom: 1px solid rgba(18, 214, 64, 0.1);
+}
+
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.marquee {
+  display: inline-block;
+  animation: marquee 20s linear infinite;
+  padding: 15px 0;
+}
+
+.marquee-item {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 25px;
+  transition: all 0.3s ease;
+  min-width: 80px;
+}
+
+.marquee-item:hover {
+  transform: translateY(-5px);
+}
+
+.marquee-item img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  margin-bottom: 8px;
+  filter: grayscale(30%);
+  transition: all 0.3s ease;
+}
+
+.marquee-item:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+
+.marquee-item span {
+  font-size: 0.9rem;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@media (max-width: 768px) {
+  .marquee-item {
+    margin: 0 15px;
+    min-width: 70px;
+  }
+  
+  .marquee-item img {
+    width: 35px;
+    height: 35px;
+  }
+}
+      
             
     </style>
 </head>
@@ -410,6 +483,60 @@
 
     <!-- Home Section -->
     <section id="home" class="bg-light">
+
+      <!-- أضف هذا في المكان الذي تريد عرض الشريط -->
+<section class="marquee-section py-4">
+  <div class="container">
+    <h3 class="text-center mb-4">Technologies I Work With</h3>
+    <div class="marquee-container">
+      <div class="marquee">
+        <!-- الصف الأول -->
+        <div class="marquee-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux">
+          <span>Linux</span>
+        </div>
+        <div class="marquee-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
+          <span>Docker</span>
+        </div>
+        <div class="marquee-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+          <span>HTML5</span>
+        </div>
+        <div class="marquee-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+          <span>CSS3</span>
+        </div>
+        <div class="marquee-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap">
+          <span>Bootstrap</span>
+        </div>
+        
+        <!-- تكرار الصف لإحداث تأثير متواصل -->
+        <div class="marquee-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux">
+          <span>Linux</span>
+        </div>
+        <div class="marquee-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
+          <span>Docker</span>
+        </div>
+        <div class="marquee-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+          <span>HTML5</span>
+        </div>
+        <div class="marquee-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+          <span>CSS3</span>
+        </div>
+        <div class="marquee-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap">
+          <span>Bootstrap</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>  
         <!-- الساعة الجديدة -->
     <div class="top-clock">
         <div class="clock-container">
@@ -861,5 +988,12 @@
     setInterval(nextSlide, 5000);
   });
 </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+  // تكرار المحتوى تلقائياً لتجنب الفراغات
+  const marquee = document.querySelector('.marquee');
+  marquee.innerHTML += marquee.innerHTML;
+});
+    </script>
 </body>
 </html>
