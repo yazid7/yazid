@@ -494,7 +494,110 @@
             50% { transform: translateY(-10px) rotate(5deg); }
         }
 
-
+      /* شبكة خلايا النحل - التصميم السداسي المتكامل */
+        .honeycomb-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .honeycomb-hexagon {
+            width: 180px;
+            height: 200px;
+            margin: 0 -25px 10px;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            background: linear-gradient(135deg, #FFD700, #F9A825);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .honeycomb-hexagon:nth-child(2) {
+            transform: translateY(100px);
+        }
+        
+        .honeycomb-hexagon:hover {
+            transform: scale(1.1) !important;
+            z-index: 10;
+            background: linear-gradient(135deg, #FFC300, #F57F17);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .honeycomb-hexagon::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://www.transparenttextures.com/patterns/hexellence.png');
+            opacity: 0.1;
+        }
+        
+        .honeycomb-icon {
+            font-size: 50px;
+            color: #8B4513;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        
+        .honeycomb-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #5D4037;
+            margin: 0;
+            padding: 0 10px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        /* تأثيرات نحلية إضافية */
+        .bee {
+            position: absolute;
+            font-size: 24px;
+            animation: fly 8s linear infinite;
+            opacity: 0.7;
+            z-index: 5;
+        }
+        
+        @keyframes fly {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(100px, -50px) rotate(10deg); }
+            50% { transform: translate(200px, 0) rotate(0deg); }
+            75% { transform: translate(100px, 50px) rotate(-10deg); }
+            100% { transform: translate(0, 0) rotate(0deg); }
+        }
+        
+        /* التكيف مع الشاشات الصغيرة */
+        @media (max-width: 768px) {
+            .honeycomb-hexagon {
+                width: 140px;
+                height: 160px;
+                margin: 0 -20px 10px;
+            }
+            
+            .honeycomb-hexagon:nth-child(2) {
+                transform: translateY(80px);
+            }
+            
+            .honeycomb-icon {
+                font-size: 40px;
+            }
+            
+            .honeycomb-title {
+                font-size: 1.1rem;
+            }
+        }
     </style>
 </head>
 <body>
