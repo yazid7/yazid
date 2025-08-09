@@ -219,11 +219,16 @@
 
 /* تنسيق المحتوى المخفي */
 .skill-content {
-  display: none;
+  display: block;
   padding: 20px 0;
   animation: fadeIn 0.5s ease;
 }
-
+.skill-item {
+  transition: transform 0.3s ease;
+}
+.skill-item:hover {
+  transform: scale(1.05);
+}
 /* أيقونة السهم */
 .fa-chevron-down {
   transition: transform 0.3s ease;
@@ -446,12 +451,13 @@
                 
                 <div class="col-md-4">
                     <div class="skill-category">
-                        <div class="skill-header" onclick="toggleSkills('tools')">
+                        
                         <h4 class="text-center mb-4">Tools & Technologies</h4>
                         <i class="fas fa-chevron-down" id="tools-icon"></i>
                         <div class="row">
                             <div class="skill-content" id="tools-content">
                                 <div class="skill-item">
+                                    <div class="skill-header" onclick="toggleSkills('tools')">
                                     <img src="https://www.vectorlogo.zone/logos/linux/linux-icon.svg" alt="Linux">
                                     <p>
 ‫ما هو لينكس وما هو استخدامه؟ (التعرف على نظام التشغيل Linux)‬‎
