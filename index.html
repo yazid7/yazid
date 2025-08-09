@@ -441,59 +441,148 @@
   }
 }
 
-      /* العنوان الرئيسي */
-        .honeycomb-header {
+/* العنوان الرئيسي - النسخة المحسنة */
+        .honeycomb-main-header {
+            margin: 40px auto 50px;
             position: relative;
-            margin: 40px auto 30px;
-            padding: 15px;
-            width: 80%;
-            max-width: 600px;
         }
         
-        .honeycomb-header h2 {
+        .honeycomb-main-header h1 {
             display: inline-block;
-            font-size: 2.5rem;
-            color: #8B4513; /* لون بني خشبي */
-            margin: 0;
-            padding: 10px 30px;
-            background: linear-gradient(90deg, #FFD70033, #FFD700aa, #FFD70033); /* تدرج ذهبي شفاف */
-            border-radius: 50px;
+            font-size: 2.8rem;
+            color: #5D4037;
+            background: linear-gradient(to bottom, #FFD700, #F9A825);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            padding: 10px 40px;
+            border: 3px solid #8B4513;
+            border-radius: 60px;
+            box-shadow: 0 10px 25px rgba(139, 69, 19, 0.2);
             position: relative;
-            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.1);
+            z-index: 1;
         }
         
-        /* زخارف نحلية حول العنوان */
-        .honeycomb-header::before,
-        .honeycomb-header::after {
-            content: "🐝";
+        .honeycomb-main-header h1::before {
+            content: "";
             position: absolute;
-            font-size: 1.8rem;
-            top: 50%;
-            transform: translateY(-50%);
-            animation: float 3s ease-in-out infinite;
+            top: -15px;
+            left: -15px;
+            right: -15px;
+            bottom: -15px;
+            border: 2px dashed #FFD700;
+            border-radius: 70px;
+            z-index: -1;
+            animation: rotate 20s linear infinite;
         }
         
-        .honeycomb-header::before {
-            right: 0;
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
         
-        .honeycomb-header::after {
-            left: 0;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(-50%) rotate(0deg); }
-            50% { transform: translateY(-60%) rotate(10deg); }
-        }
-        
-        /* شبكة خلايا النحل (من الإجابة السابقة) */
-        .honeycomb {
+        /* شبكة خلايا النحل - التصميم السداسي المتكامل */
+        .honeycomb-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            width: 80%;
-            max-width: 500px;
-            margin: 0 auto 50px;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .honeycomb-hexagon {
+            width: 180px;
+            height: 200px;
+            margin: 0 -25px 10px;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            background: linear-gradient(135deg, #FFD700, #F9A825);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .honeycomb-hexagon:nth-child(2) {
+            transform: translateY(100px);
+        }
+        
+        .honeycomb-hexagon:hover {
+            transform: scale(1.1) !important;
+            z-index: 10;
+            background: linear-gradient(135deg, #FFC300, #F57F17);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .honeycomb-hexagon::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://www.transparenttextures.com/patterns/hexellence.png');
+            opacity: 0.1;
+        }
+        
+        .honeycomb-icon {
+            font-size: 50px;
+            color: #8B4513;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        
+        .honeycomb-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #5D4037;
+            margin: 0;
+            padding: 0 10px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        /* تأثيرات نحلية إضافية */
+        .bee {
+            position: absolute;
+            font-size: 24px;
+            animation: fly 8s linear infinite;
+            opacity: 0.7;
+            z-index: 5;
+        }
+        
+        @keyframes fly {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(100px, -50px) rotate(10deg); }
+            50% { transform: translate(200px, 0) rotate(0deg); }
+            75% { transform: translate(100px, 50px) rotate(-10deg); }
+            100% { transform: translate(0, 0) rotate(0deg); }
+        }
+        
+        /* التكيف مع الشاشات الصغيرة */
+        @media (max-width: 768px) {
+            .honeycomb-hexagon {
+                width: 140px;
+                height: 160px;
+                margin: 0 -20px 10px;
+            }
+            
+            .honeycomb-hexagon:nth-child(2) {
+                transform: translateY(80px);
+            }
+            
+            .honeycomb-icon {
+                font-size: 40px;
+            }
+            
+            .honeycomb-title {
+                font-size: 1.1rem;
+            }
         }
 
 
@@ -797,34 +886,38 @@
             </div>
         </div>    
 
-           <!-- العنوان الرئيسي -->
-    <div class="honeycomb-header">
-        <h2>
+               <!-- العنوان الرئيسي المحسن -->
+    <div class="honeycomb-main-header">
+        <h1>
             <i class="fas fa-honey-pot"></i>
-            عالم النحل والعسل
+            مملكة النحل والعسل
             <i class="fas fa-bee"></i>
-        </h2>
+        </h1>
     </div>
     
-    <!-- شبكة خلايا النحل -->
-    <div class="honeycomb">
-        <!-- الفئة 1 -->
-        <div class="honeycomb-cell">
-            <i class="fas fa-honey-pot"></i>
-            <div class="honeycomb-title">إنتاج العسل</div>
+    <!-- شبكة خلايا النحل السداسية -->
+    <div class="honeycomb-grid">
+        <!-- خلية 1 - إنتاج العسل -->
+        <div class="honeycomb-hexagon" onclick="openCategory('إنتاج العسل')">
+            <i class="fas fa-honey-pot honeycomb-icon"></i>
+            <h3 class="honeycomb-title">إنتاج العسل</h3>
         </div>
         
-        <!-- الفئة 2 -->
-        <div class="honeycomb-cell">
-            <i class="fas fa-crown"></i>
-            <div class="honeycomb-title">تربية الملكات</div>
+        <!-- خلية 2 - تربية الملكات -->
+        <div class="honeycomb-hexagon" onclick="openCategory('تربية الملكات')">
+            <i class="fas fa-crown honeycomb-icon"></i>
+            <h3 class="honeycomb-title">تربية الملكات</h3>
         </div>
         
-        <!-- الفئة 3 -->
-        <div class="honeycomb-cell">
-            <i class="fas fa-heartbeat"></i>
-            <div class="honeycomb-title">الرعاية الصحية</div>
+        <!-- خلية 3 - الرعاية الصحية -->
+        <div class="honeycomb-hexagon" onclick="openCategory('الرعاية الصحية')">
+            <i class="fas fa-heartbeat honeycomb-icon"></i>
+            <h3 class="honeycomb-title">الرعاية الصحية</h3>
         </div>
+        
+        <!-- نحلات طائرة (زخرفة) -->
+        <div class="bee" style="top:20%; left:10%; animation-delay: 0s;">🐝</div>
+        <div class="bee" style="top:70%; left:80%; animation-delay: 2s;">🐝</div>
     </div>
         
 </section>
@@ -1084,10 +1177,11 @@
 });
     </script>
 <script>
-    function openCategory(categoryName) {
-    alert(`تم النقر على: ${categoryName}`);
-    // يمكنك استبدال الـ alert برابط إلى صفحة الفئة المحددة
-}
+       function openCategory(category) {
+            // يمكنك تغيير هذا لفتح صفحة أو عرض تفاصيل
+            alert(`ستتم معالجة: ${category}`);
+            // window.location.href = `${category}.html`;
+        }
 </script>
     
 </body>
