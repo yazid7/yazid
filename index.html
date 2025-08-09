@@ -475,16 +475,10 @@
             right: -10px;
             bottom: -10px;
             border: 2px dashed rgba(255, 215, 0, 0.7);
-            border-radius: 70px;
+            border-radius: 70px; 
             z-index: -1;
         }
         
-        /* تأثيرات النحلات */
-        .bee-float {
-            position: absolute;
-            font-size: 24px;
-            animation: float 3s ease-in-out infinite;
-        }
         
         .bee-1 { top: -20px; right: 20%; animation-delay: 0s; }
         .bee-2 { bottom: -15px; left: 25%; animation-delay: 1s; }
@@ -578,13 +572,6 @@
             100% { transform: translate(0, 0) rotate(0deg); }
         }
         
-        /* التكيف مع الشاشات الصغيرة */
-        @media (max-width: 768px) {
-            .honeycomb-hexagon {
-                width: 140px;
-                height: 160px;
-                margin: 0 -20px 10px;
-            }
             
             .honeycomb-hexagon:nth-child(2) {
                 transform: translateY(80px);
