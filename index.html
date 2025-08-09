@@ -441,66 +441,46 @@
   }
 }
 
-  /* تنسيق قسم تربية النحل */
-        .bee-category {
-            background: rgba(255, 243, 176, 0.3);
-            border-radius: 15px;
-            margin: 20px;
-            padding: 15px;
-            border: 2px dashed #FFD700;
-        }
-        
-        .category-header {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            padding: 10px;
-            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-            color: white;
-            border-radius: 10px;
-        }
-        
-        .category-content {
-            display: none;
-            padding: 15px;
-        }
-        
-        .skill-card {
-            background: white;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        
-        .skill-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            color: #FFA500;
-        }
-        
-        /* تحريك النحلة */
-        .bee {
-            position: absolute;
-            font-size: 2rem;
-            color: #FFD700;
-            animation: fly 15s linear infinite;
-            z-index: 100;
-        }
-        
-        @keyframes fly {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(100px, 50px) rotate(10deg); }
-            50% { transform: translate(200px, 0) rotate(0deg); }
-            75% { transform: translate(100px, -50px) rotate(-10deg); }
-            100% { transform: translate(0, 0) rotate(0deg); }
-        }    
-            .fa-bee {
-            font-size: 24px;
-            color: #ff9900; /* لون برتقالي للنحلة */
-        }
+.honeycomb-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 50px auto;
+    max-width: 800px;
+}
+
+.honeycomb-cell {
+    width: 150px;
+    height: 130px;
+    background-color: #FFD700; /* لون ذهبي مثل العسل */
+    clip-path: polygon(
+        50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%
+    ); /* شكل سداسي */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.honeycomb-cell:hover {
+    transform: scale(1.1);
+    background-color: #FFC300; /* لون أغمق عند التحويم */
+}
+
+.honeycomb-cell i {
+    font-size: 40px;
+    color: #8B4513; /* لون بني مثل خلية النحل */
+    margin-bottom: 10px;
+}
+
+.honeycomb-cell h3 {
+    margin: 0;
+    color: #5D4037; /* لون نص بني داكن */
+    font-family: 'Arial', sans-serif;
+}
     </style>
 </head>
 <body>
@@ -799,64 +779,36 @@
                     </div>
                 </div>
             </div>
-        </div>     
-</section>
+        </div>    
 
-    
-<!-- قسم تربية النحل -->
-<section class="bee-category">
-    <div class="category-header" onclick="toggleBeeCategory()">
-        <h3>
-            
-            <i class="fas fa-bee"></i>
-             👑 تربية النحل 🐝 وتربية الملكات
-        </h3>
-        <i class="fas fa-chevron-down"></i>
+       <div class="honeycomb-container">
+    <!-- الفئة 1 -->
+    <div class="honeycomb-cell" onclick="openCategory('إنتاج العسل')">
+        <i class="fas fa-honey-pot"></i>
+        <h3>إنتاج العسل</h3>
     </div>
     
-    <div class="category-content" id="bee-content">
-        <div class="skill-card">
-            <div class="skill-icon">
-                <i class="fas fa-jar"></i>
-            </div>
-            <h4>إنتاج العسل</h4>
-            <ul>
-                <li>تحديد مواسم الجني المثلى</li>
-                <li>ضبط تركيز الرطوبة</li>
-                <li>فصل العسل حسب المصدر النباتي</li>
-            </ul>
-        </div>
-        
-        <div class="skill-card">
-            <div class="skill-icon">
-                <i class="fas fa-crown"></i>
-            </div>
-            <h4>تربية الملكات</h4>
-            <ul>
-                <li>اختيار السلالات الممتازة</li>
-                <li>التلقيح الاصطناعي</li>
-                <li>إدارة بيوت التربية</li>
-            </ul>
-        </div>
-        
-        <div class="skill-card">
-            <div class="skill-icon">
-                <i class="fas fa-briefcase-medical"></i>
-            </div>
-            <h4>الرعاية الصحية</h4>
-            <ul>
-                <li>تشخيص الأمراض الشائعة</li>
-                <li>الوقاية من طفيليات الفاروا</li>
-                <li>التغذية العلاجية</li>
-            </ul>
-        </div>
+    <!-- الفئة 2 -->
+    <div class="honeycomb-cell" onclick="openCategory('تربية الملكات')">
+        <i class="fas fa-crown"></i>
+        <h3>تربية الملكات</h3>
     </div>
-</section>
-
-<!-- النحلة المتحركة -->
+    
+    <!-- الفئة 3 -->
+    <div class="honeycomb-cell" onclick="openCategory('الرعاية الصحية')">
+        <i class="fas fa-heartbeat"></i>
+        <h3>الرعاية الصحية</h3>
+    </div>
+</div>
+        <!-- النحلة المتحركة -->
 <div class="bee">
     <i class="fas fa-bee"></i>
 </div>
+        
+</section>
+
+    
+
     <!-- Image Slider Section -->
 <section id="portfolio-slider" class="py-5">
   <div class="container">
@@ -1110,24 +1062,10 @@
 });
     </script>
 <script>
-    function toggleBeeCategory() {
-        const content = document.getElementById('bee-content');
-        const icon = document.querySelector('.category-header .fa-chevron-down');
-        
-        if (content.style.display === 'block') {
-            content.style.display = 'none';
-            icon.style.transform = 'rotate(0deg)';
-        } else {
-            content.style.display = 'block';
-            icon.style.transform = 'rotate(180deg)';
-        }
-    }
-    
-    // بدء التحريك عند تحميل الصفحة
-    document.addEventListener('DOMContentLoaded', function() {
-        const bee = document.querySelector('.bee');
-        bee.style.display = 'block';
-    });
+    function openCategory(categoryName) {
+    alert(`تم النقر على: ${categoryName}`);
+    // يمكنك استبدال الـ alert برابط إلى صفحة الفئة المحددة
+}
 </script>
     
 </body>
