@@ -441,49 +441,60 @@
   }
 }
 
-.honeycomb-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin: 50px auto;
-    max-width: 800px;
-}
-
-.honeycomb-cell {
-    width: 150px;
-    height: 130px;
-    background-color: #FFD700; /* لون ذهبي مثل العسل */
-    clip-path: polygon(
-        50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%
-    ); /* شكل سداسي */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.honeycomb-cell:hover {
-    transform: scale(1.1);
-    background-color: #FFC300; /* لون أغمق عند التحويم */
-}
-
-.honeycomb-cell i {
-    font-size: 40px;
-    color: #8B4513; /* لون بني مثل خلية النحل */
-    margin-bottom: 10px;
-}
-
-.honeycomb-cell h3 {
-    margin: 0;
-    color: #5D4037; /* لون نص بني داكن */
-    font-family: 'Arial', sans-serif;
-}
-.honeycomb-cell {
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-}            
+      /* العنوان الرئيسي */
+        .honeycomb-header {
+            position: relative;
+            margin: 40px auto 30px;
+            padding: 15px;
+            width: 80%;
+            max-width: 600px;
+        }
+        
+        .honeycomb-header h2 {
+            display: inline-block;
+            font-size: 2.5rem;
+            color: #8B4513; /* لون بني خشبي */
+            margin: 0;
+            padding: 10px 30px;
+            background: linear-gradient(90deg, #FFD70033, #FFD700aa, #FFD70033); /* تدرج ذهبي شفاف */
+            border-radius: 50px;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.1);
+        }
+        
+        /* زخارف نحلية حول العنوان */
+        .honeycomb-header::before,
+        .honeycomb-header::after {
+            content: "🐝";
+            position: absolute;
+            font-size: 1.8rem;
+            top: 50%;
+            transform: translateY(-50%);
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .honeycomb-header::before {
+            right: 0;
+        }
+        
+        .honeycomb-header::after {
+            left: 0;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(-50%) rotate(0deg); }
+            50% { transform: translateY(-60%) rotate(10deg); }
+        }
+        
+        /* شبكة خلايا النحل (من الإجابة السابقة) */
+        .honeycomb {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 80%;
+            max-width: 500px;
+            margin: 0 auto 50px;
+        }
 
 
     </style>
@@ -786,30 +797,35 @@
             </div>
         </div>    
 
-       <div class="honeycomb-container">
-           <h2 class="text-center mb-4">تربية النحل والملكات </h2>
-    <!-- الفئة 1 -->
-    <div class="honeycomb-cell" onclick="openCategory('إنتاج العسل')">
-        <i class="fas fa-honey-pot"></i>
-        <h3>إنتاج العسل</h3>
+           <!-- العنوان الرئيسي -->
+    <div class="honeycomb-header">
+        <h2>
+            <i class="fas fa-honey-pot"></i>
+            عالم النحل والعسل
+            <i class="fas fa-bee"></i>
+        </h2>
     </div>
     
-    <!-- الفئة 2 -->
-    <div class="honeycomb-cell" onclick="openCategory('تربية الملكات')">
-        <i class="fas fa-crown"></i>
-        <h3>تربية الملكات</h3>
+    <!-- شبكة خلايا النحل -->
+    <div class="honeycomb">
+        <!-- الفئة 1 -->
+        <div class="honeycomb-cell">
+            <i class="fas fa-honey-pot"></i>
+            <div class="honeycomb-title">إنتاج العسل</div>
+        </div>
+        
+        <!-- الفئة 2 -->
+        <div class="honeycomb-cell">
+            <i class="fas fa-crown"></i>
+            <div class="honeycomb-title">تربية الملكات</div>
+        </div>
+        
+        <!-- الفئة 3 -->
+        <div class="honeycomb-cell">
+            <i class="fas fa-heartbeat"></i>
+            <div class="honeycomb-title">الرعاية الصحية</div>
+        </div>
     </div>
-    
-    <!-- الفئة 3 -->
-    <div class="honeycomb-cell" onclick="openCategory('الرعاية الصحية')">
-        <i class="fas fa-heartbeat"></i>
-        <h3>الرعاية الصحية</h3>
-    </div>
-</div>
-        <!-- النحلة المتحركة -->
-<div class="bee">
-    <i class="fas fa-bee"></i>
-</div>
         
 </section>
 
