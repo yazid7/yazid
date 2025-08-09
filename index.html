@@ -196,49 +196,80 @@
             opacity: 0.9;
         }
         
-        /* تعديلات الهيدر لاستيعاب الساعة */
-        #header {
-            margin-top: 0;
+.expandable-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+  overflow: hidden;
+}
 
-/* تنسيق رأس القسم */
-.skill-header {
+.card-header {
   background: #12D640;
   color: white;
   padding: 15px 20px;
-  border-radius: 8px;
-  cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.skill-header:hover {
-  background: #0eb33a;
+.card-header:hover {
+  background: #0EB33A;
 }
 
-/* تنسيق المحتوى المخفي */
-.skill-content {
-  display: block;
-  padding: 20px 0;
-  animation: fadeIn 0.5s ease;
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
-.skill-item {
-  transition: transform 0.3s ease;
+
+.header-content i {
+  font-size: 1.2rem;
 }
-.skill-item:hover {
-  transform: scale(1.05);
-}
-/* أيقونة السهم */
-.fa-chevron-down {
+
+.toggle-icon {
   transition: transform 0.3s ease;
 }
 
-/* تأثيرات الحركة */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
-    }
+.card-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.3s ease;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 15px;
+}
+
+.tech-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  transition: transform 0.3s ease;
+}
+
+.tech-item:hover {
+  transform: translateY(-5px);
+}
+
+.tech-item img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+/* عندما يكون العنصر مفتوحًا */
+.expandable-card.active .card-content {
+  max-height: 500px; /* يمكن تعديله حسب المحتوى */
+  padding: 20px;
+}
+
+.expandable-card.active .toggle-icon {
+  transform: rotate(180deg);
+}
             
     </style>
 </head>
@@ -450,14 +481,14 @@
                 </div>
                 
                 <div class="col-md-4">
-                    <div class="skill-category">
-                        
+                    <div class="expandable-card">
+                        <div class="card-header" onclick="toggleCard(this)">
                         <h4 class="text-center mb-4">Tools & Technologies</h4>
                         <i class="fas fa-chevron-down" id="tools-icon"></i>
                         <div class="row">
                             <div class="skill-content" id="tools-content">
                                 <div class="skill-item">
-                                    <div class="skill-header" onclick="toggleSkills('tools')">
+                                    
                                     <img src="https://www.vectorlogo.zone/logos/linux/linux-icon.svg" alt="Linux">
                                     <p>
 ‫ما هو لينكس وما هو استخدامه؟ (التعرف على نظام التشغيل Linux)‬‎
@@ -659,17 +690,16 @@
         setInterval(updateClock, 1000);
     </script>
 <script>
-    function toggleSkills(id) {
-  const content = document.getElementById(`${id}-content`);
-  const icon = document.getElementById(`${id}-icon`);
+    function toggleCard(element) {
+  const card = element.closest('.expandable-card');
+  card.classList.toggle('active');
   
-  if (content.style.display === 'block') {
-    content.style.display = 'none';
-    icon.style.transform = 'rotate(0deg)';
-  } else {
-    content.style.display = 'block';
-    icon.style.transform = 'rotate(180deg)';
-  }
+  // إغلاق البطاقات الأخرى إذا كنت تريد ذلك
+  document.querySelectorAll('.expandable-card').forEach(otherCard => {
+    if (otherCard !== card) {
+      otherCard.classList.remove('active');
+    }
+  });
 }
 </script>
 </body>
