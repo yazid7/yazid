@@ -596,6 +596,112 @@
   }
        
 
+
+
+background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 20px 0;
+        }
+        .contact-container {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+        .contact-header {
+            background: linear-gradient(135deg, #4e6ef2 0%, #3a56d8 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .contact-header h2 {
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .contact-header p {
+            opacity: 0.9;
+        }
+        .contact-form {
+            padding: 30px;
+        }
+        .form-control:focus {
+            border-color: #4e6ef2;
+            box-shadow: 0 0 0 0.25rem rgba(78, 110, 242, 0.25);
+        }
+        .btn-primary {
+            background: #4e6ef2;
+            border-color: #4e6ef2;
+            padding: 10px 25px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .btn-primary:hover {
+            background: #3a56d8;
+            border-color: #3a56d8;
+            transform: translateY(-2px);
+        }
+        .notification {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-100px);
+            background: #28a745;
+            color: white;
+            padding: 16px 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            display: flex;
+            align-items: center;
+        }
+        .notification.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+        .notification i {
+            margin-left: 10px;
+        }
+        .contact-info {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 0 0 15px 0;
+            height: 100%;
+        }
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        .info-item i {
+            background: #4e6ef2;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 15px;
+            flex-shrink: 0;
+        }
+        .info-content h5 {
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        @media (max-width: 992px) {
+            .contact-info {
+                border-radius: 0 0 15px 15px;
+            }
+        }
+
+
+
+
+
     </style>
 </head>
 <body>
@@ -1035,32 +1141,58 @@
                         
                     </div>
                 </div>
-                          <div class="col-lg-7">
-                    <div class="contact-form">
-                        <form action="https://formspree.io/f/mqadroqp"
-  method="POST">
-                            <div class="row">
-                                <div class="col-md-6 form-group">
-                                    <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-                                </div>
-                                <div class="col-md-6 form-group mt-3 mt-md-0">
-                                    <input type="email" class="form-control" name="email" placeholder="Your Email" required>
-                                </div>
-                            </div>
-                            <div class="form-group mt-3">
-                                <input type="text" class="form-control" name="subject" placeholder="Subject" required>
-                            </div>
-                            <div class="form-group mt-3">
-                                <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
-                            </div>
-                            <div class="text-center mt-3">
-                                <button type="submit" class="btn btn-primary">Send Message</button>
-                            </div>
-                        </form>
+         <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="contact-container">
+                    <div class="contact-header">
+                        <h2><i class="bi bi-envelope-paper me-2"></i>اتصل بنا</h2>
+                        <p class="mb-0">يسعدنا تواصلك معنا، اترك رسالتك وسنرد عليك قريبًا</p>
                     </div>
-                </div>
-            </div>
-        </div>
+                    
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="contact-form">
+                                <form id="contactForm">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="name" class="form-label">الاسم الكامل</label>
+                                                <input type="text" class="form-control" id="name" name="name" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="email" class="form-label">البريد الإلكتروني</label>
+                                                <input type="email" class="form-control" id="email" name="email" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="subject" class="form-label">الموضوع</label>
+                                        <input type="text" class="form-control" id="subject" name="subject" required>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="message" class="form-label">الرسالة</label>
+                                        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                                    </div>
+                                    
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-primary">
+                                            <i class="bi bi-send me-2"></i>إرسال الرسالة
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>                 
+ <!-- Notification -->
+    <div class="notification" id="notification">
+        <i class="bi bi-check-circle-fill"></i>
+        <span>تم إرسال رسالتك بنجاح!</span>
+    </div>
+
     </section>
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-4">
@@ -1219,39 +1351,73 @@
             // window.location.href = `${category}.html`;
         }
 </script>
-<!-- Place this script at the end of the body tag -->
-<script>
-  var form = document.getElementById("my-form");
-  
-  async function handleSubmit(event) {
-    event.preventDefault();
-    var status = document.getElementById("my-form-status");
-    var data = new FormData(event.target);
-    fetch(event.action, {
-      method: form.method,
-      body: data,
-      headers: {
-          'Accept': 'application/json'
-      }
-    }).then(response => {
-      if (response.ok) {
-        status.innerHTML = "Thanks for your submission!";
-        form.reset()
-      } else {
-        response.json().then(data => {
-          if (Object.hasOwn(data, 'errors')) {
-            status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
-          } else {
-            status.innerHTML = "Oops! There was a problem submitting your form"
-          }
-        })
-      }
-    }).catch(error => {
-      status.innerHTML = "Oops! There was a problem submitting your form"
-    });
-  }
-  form.addEventListener("submit", handleSubmit)
-</script>
+
+<!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contactForm');
+            const notification = document.getElementById('notification');
+            
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                // إظهار رسالة التحقق البصرية
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> جاري الإرسال...';
+                submitBtn.disabled = true;
+                
+                // جمع بيانات النموذج
+                const formData = new FormData(form);
+                
+                // محاكاة الإرسال (استبدل هذا بـ fetch API للإرسال الحقيقي)
+                setTimeout(() => {
+                    // هنا نستخدم Formspree للإرسال الفعلي
+                    fetch('https://formspree.io/f/mqadroqp', {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            // إظهار الإشعار
+                            notification.style.backgroundColor = '#28a745';
+                            notification.innerHTML = '<i class="bi bi-check-circle-fill"></i><span>تم إرسال رسالتك بنجاح!</span>';
+                            notification.classList.add('show');
+                            
+                            // إخفاء الإشعار بعد 4 ثوان
+                            setTimeout(() => {
+                                notification.classList.remove('show');
+                            }, 4000);
+                            
+                            // تفريغ الحقول
+                            form.reset();
+                        } else {
+                            throw new Error('فشل في إرسال النموذج');
+                        }
+                    })
+                    .catch(error => {
+                        notification.style.backgroundColor = '#dc3545';
+                        notification.innerHTML = '<i class="bi bi-exclamation-circle-fill"></i><span>حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى.</span>';
+                        notification.classList.add('show');
+                        
+                        setTimeout(() => {
+                            notification.classList.remove('show');
+                        }, 4000);
+                    })
+                    .finally(() => {
+                        // إعادة زر الإرسال إلى حالته الأصلية
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                    });
+                }, 1500); // محاكاة وقت الانتظار للإرسال
+            });
+        });
+    </script>
     
 </body>
 </html>
