@@ -594,98 +594,7 @@
     transform: scale(1.2);
     opacity: 0.9;
   }
-            
-
-   
-        .container {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 500px;
-            padding: 30px;
-        }
-        h2 {
-            color: #2c3e50;
-            text-align: center;
-            margin-top: 0;
-            margin-bottom: 20px;
-        }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        label {
-            display: block;
-            margin-bottom: 8px;
-            color: #333;
-            font-weight: 500;
-        }
-        input, textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            font-size: 16px;
-            transition: border-color 0.3s;
-        }
-        input:focus, textarea:focus {
-            border-color: #4e6ef2;
-            outline: none;
-        }
-        textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-        button {
-            background-color: #4e6ef2;
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 16px;
-            width: 100%;
-            transition: background-color 0.3s;
-        }
-        button:hover {
-            background-color: #3a56d8;
-        }
-        .notification {
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #4CAF50;
-            color: white;
-            padding: 16px 24px;
-            border-radius: 6px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            opacity: 0;
-            transition: opacity 0.3s;
-            z-index: 1000;
-        }
-        .notification.show {
-            opacity: 1;
-        }
-        .loading {
-            display: none;
-            text-align: center;
-            margin-top: 15px;
-        }
-        .loading-spinner {
-            border: 3px solid #f3f3f3;
-            border-top: 3px solid #4e6ef2;
-            border-radius: 50%;
-            width: 24px;
-            height: 24px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
+       
 
     </style>
 </head>
@@ -1126,33 +1035,16 @@
                         
                     </div>
                 </div>
-                
-                <div class="col-lg-7">
-                    <div class="contact-form">
-                        <div class="container">
-        <h2>اتصل بنا</h2>
-        <form id="contactForm">
-            <div class="form-group">
-                <label for="email">بريدك الإلكتروني:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="message">رسالتك:</label>
-                <textarea id="message" name="message" required></textarea>
-            </div>
-            <button type="submit">إرسال</button>
-        </form>
-        <div class="loading" id="loading">
-            <div class="loading-spinner"></div>
-            <p>جاري الإرسال...</p>
-        </div>
-    </div>
-
-    <div class="notification" id="notification">تم إرسال رسالتك بنجاح!</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+           <!-- modify this form HTML and place wherever you want your form -->
+<form id="my-form" action="https://formspree.io/f/mqadroqp" method="POST">
+  <label>Email:</label>
+  <input type="email" name="email" />
+  <label>Message:</label>
+  <input type="text" name="message" />
+  <button id="my-form-button">Submit</button>
+  <p id="my-form-status"></p>
+</form>     
+  
     </section>
 
     <!-- Footer -->
@@ -1312,63 +1204,39 @@
             // window.location.href = `${category}.html`;
         }
 </script>
+<!-- Place this script at the end of the body tag -->
 <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const form = document.getElementById('contactForm');
-            const notification = document.getElementById('notification');
-            const loading = document.getElementById('loading');
-            
-            form.addEventListener('submit', function(event) {
-                event.preventDefault(); // منع الإرسال التقليدي للنموذج
-                
-                // عرض مؤشر التحميل
-                loading.style.display = 'block';
-                
-                // جمع بيانات النموذج
-                const formData = new FormData(form);
-                
-                // إرسال البيانات باستخدام Fetch API
-                fetch('https://formspree.io/f/mqadroqp', {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                })
-                .then(response => {
-                    if (response.ok) {
-                        // إظهار الإشعار
-                        notification.classList.add('show');
-                        
-                        // إخفاء الإشعار بعد 3 ثوان
-                        setTimeout(() => {
-                            notification.classList.remove('show');
-                        }, 3000);
-                        
-                        // تفريغ الحقول
-                        form.reset();
-                    } else {
-                        throw new Error('فشل في إرسال النموذج');
-                    }
-                })
-                .catch(error => {
-                    notification.textContent = 'حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى.';
-                    notification.style.backgroundColor = '#f44336';
-                    notification.classList.add('show');
-                    
-                    setTimeout(() => {
-                        notification.classList.remove('show');
-                        notification.style.backgroundColor = '#4CAF50';
-                        notification.textContent = 'تم إرسال رسالتك بنجاح!';
-                    }, 3000);
-                })
-                .finally(() => {
-                    // إخفاء مؤشر التحميل
-                    loading.style.display = 'none';
-                });
-            });
-        });
-    </script>
+  var form = document.getElementById("my-form");
+  
+  async function handleSubmit(event) {
+    event.preventDefault();
+    var status = document.getElementById("my-form-status");
+    var data = new FormData(event.target);
+    fetch(event.target.action, {
+      method: form.method,
+      body: data,
+      headers: {
+          'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        status.innerHTML = "Thanks for your submission!";
+        form.reset()
+      } else {
+        response.json().then(data => {
+          if (Object.hasOwn(data, 'errors')) {
+            status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+          } else {
+            status.innerHTML = "Oops! There was a problem submitting your form"
+          }
+        })
+      }
+    }).catch(error => {
+      status.innerHTML = "Oops! There was a problem submitting your form"
+    });
+  }
+  form.addEventListener("submit", handleSubmit)
+</script>
     
 </body>
 </html>
