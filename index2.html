@@ -598,56 +598,94 @@
 
 
 
-background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 20px 0;
-        }
         .contact-container {
             background: #fff;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
             overflow: hidden;
+            margin: 0 auto;
+            width: 95%;
+            max-width: 1200px;
         }
+        
         .contact-header {
-            background: linear-gradient(135deg, #4e6ef2 0%, #3a56d8 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, #3a56d8 100%);
             color: white;
-            padding: 30px;
+            padding: 40px;
             text-align: center;
         }
+        
         .contact-header h2 {
             font-weight: 700;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            font-size: 2.5rem;
         }
+        
         .contact-header p {
             opacity: 0.9;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
         }
+        
+        .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
         .contact-form {
-            padding: 30px;
+            padding: 40px;
+            flex: 1;
+            min-width: 60%;
         }
-        .form-control:focus {
-            border-color: #4e6ef2;
-            box-shadow: 0 0 0 0.25rem rgba(78, 110, 242, 0.25);
+        
+        .contact-info {
+            background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+            padding: 40px;
+            flex: 0 0 35%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
-        .btn-primary {
-            background: #4e6ef2;
-            border-color: #4e6ef2;
-            padding: 10px 25px;
-            font-weight: 600;
+        
+        .form-control {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 2px solid #eaeaea;
             transition: all 0.3s;
+            font-size: 1rem;
         }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(78, 110, 242, 0.2);
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            border: none;
+            padding: 15px 35px;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+        
         .btn-primary:hover {
             background: #3a56d8;
-            border-color: #3a56d8;
             transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
+        
+        /* تعديل موقع الإشعار ليكون في الأسفل */
         .notification {
             position: fixed;
-            top: 20px;
+            bottom: 20px;
             left: 50%;
-            transform: translateX(-50%) translateY(-100px);
-            background: #28a745;
+            transform: translateX(-50%) translateY(100px);
+            background: var(--success);
             color: white;
             padding: 16px 25px;
             border-radius: 10px;
@@ -658,44 +696,118 @@ background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
             display: flex;
             align-items: center;
         }
+        
         .notification.show {
             opacity: 1;
             transform: translateX(-50%) translateY(0);
         }
+        
         .notification i {
             margin-left: 10px;
         }
-        .contact-info {
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 0 0 15px 0;
-            height: 100%;
-        }
+        
         .info-item {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
+        
         .info-item i {
-            background: #4e6ef2;
+            background: var(--primary);
             color: white;
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-left: 15px;
             flex-shrink: 0;
+            font-size: 1.2rem;
         }
+        
         .info-content h5 {
             margin-bottom: 5px;
             font-weight: 600;
+            color: var(--dark);
         }
+        
+        .info-content p {
+            color: var(--secondary);
+            margin-bottom: 0;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: #3a56d8;
+            transform: translateY(-3px);
+        }
+        
         @media (max-width: 992px) {
+            .contact-content {
+                flex-direction: column;
+            }
+            
             .contact-info {
                 border-radius: 0 0 15px 15px;
             }
+        }
+        
+        .floating-label-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        
+        .floating-input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #eaeaea;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .floating-label {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            color: #6c757d;
+            transition: all 0.3s;
+            pointer-events: none;
+            background: transparent;
+        }
+        
+        .floating-input:focus + .floating-label,
+        .floating-input:not(:placeholder-shown) + .floating-label {
+            top: -10px;
+            right: 10px;
+            font-size: 0.85rem;
+            background: white;
+            padding: 0 8px;
+            color: var(--primary);
+        }
+        
+        .floating-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(78, 110, 242, 0.2);
         }
 
 
@@ -1141,53 +1253,49 @@ background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
                         
                     </div>
                 </div>
-         <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-7">
-                <div class="contact-container">
-                    <div class="contact-header">
-                        <h2><i class="bi bi-envelope-paper me-2"></i>اتصل بنا</h2>
-                        <p class="mb-0">يسعدنا تواصلك معنا، اترك رسالتك وسنرد عليك قريبًا</p>
+             <div class="contact-container">
+        <div class="contact-header">
+            <h2><i class="bi bi-envelope-paper me-2"></i>اتصل بنا</h2>
+            <p>يسعدنا تواصلك معنا، اترك رسالتك وسنرد عليك في أقرب وقت ممكن</p>
+        </div>
+        
+        <div class="contact-content">
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="floating-label-group">
+                                <input type="text" id="name" name="name" class="floating-input" placeholder=" " required>
+                                <label for="name" class="floating-label">الاسم الكامل</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="floating-label-group">
+                                <input type="email" id="email" name="email" class="floating-input" placeholder=" " required>
+                                <label for="email" class="floating-label">البريد الإلكتروني</label>
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="row">
-                        <div class="col-md-8">
-                            <div class="contact-form">
-                                <form id="contactForm">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="mb-3">
-                                                <label for="name" class="form-label">الاسم الكامل</label>
-                                                <input type="text" class="form-control" id="name" name="name" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="mb-3">
-                                                <label for="email" class="form-label">البريد الإلكتروني</label>
-                                                <input type="email" class="form-control" id="email" name="email" required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="mb-3">
-                                        <label for="subject" class="form-label">الموضوع</label>
-                                        <input type="text" class="form-control" id="subject" name="subject" required>
-                                    </div>
-                                    
-                                    <div class="mb-3">
-                                        <label for="message" class="form-label">الرسالة</label>
-                                        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-                                    </div>
-                                    
-                                    <div class="text-center">
-                                        <button type="submit" class="btn btn-primary">
-                                            <i class="bi bi-send me-2"></i>إرسال الرسالة
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>                 
- <!-- Notification -->
+                    <div class="floating-label-group">
+                        <input type="text" id="subject" name="subject" class="floating-input" placeholder=" " required>
+                        <label for="subject" class="floating-label">موضوع الرسالة</label>
+                    </div>
+                    
+                    <div class="floating-label-group">
+                        <textarea id="message" name="message" class="floating-input" rows="5" placeholder=" " style="height: 150px;" required></textarea>
+                        <label for="message" class="floating-label">رسالتك</label>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="bi bi-send me-2"></i>إرسال الرسالة
+                        </button>
+                    </div>
+                </form>
+            </div>               
+ 
+    <!-- Notification في الأسفل -->
     <div class="notification" id="notification">
         <i class="bi bi-check-circle-fill"></i>
         <span>تم إرسال رسالتك بنجاح!</span>
@@ -1354,11 +1462,15 @@ background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
 
 <!-- Bootstrap 5 JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <script>
+      <script>
         document.addEventListener('DOMContentLoaded', function() {
             const form = document.getElementById('contactForm');
             const notification = document.getElementById('notification');
+            
+            // إضافة placeholders للحقول
+            document.querySelectorAll('.floating-input').forEach(input => {
+                input.setAttribute('placeholder', ' ');
+            });
             
             form.addEventListener('submit', function(event) {
                 event.preventDefault();
@@ -1417,7 +1529,7 @@ background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
                 }, 1500); // محاكاة وقت الانتظار للإرسال
             });
         });
-    </script>
-    
+    </script> 
+   
 </body>
 </html>
