@@ -733,18 +733,7 @@ contact-container {
 
          
 /* خلفية متحركة */
-.background-animation {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background: linear-gradient(135deg, 
-        rgba(102, 126, 234, 0.8) 0%, 
-        rgba(118, 75, 162, 0.8) 100%);
-    overflow: hidden;
-}
+
 
 .background-animation::before,
 .background-animation::after {
@@ -1232,9 +1221,6 @@ active" href="#my-project">My Project</a>
 </section>  
 
 
-    <!-- خلفية الصفحة -->
-    <div class="background-animation"></div>
-    
        <!-- نافذة عيد الميلاد المنبثقة -->
     <div class="modal birthday-modal fade show" id="birthdayModal" tabindex="-1" aria-modal="true" role="dialog">
         <div class="modal-dialog modal-dialog-centered">
@@ -1297,20 +1283,7 @@ active" href="#my-project">My Project</a>
         </div>
     </div>
 
-    <!-- حالة عدم وجود تذكير -->
-    <div id="noReminderState" class="no-reminder-container" style="display: none;">
-        <div class="no-reminder-content">
-            <h2>لا يوجد تذكير حالياً</h2>
-            <div class="reminder-info">
-                <p>نافذة تذكير عيد الميلاد ستظهر تلقائياً قبل أسبوع من الموعد.</p>
-                <p>موعد عيد الميلاد القادم: <span id="nextBirthdayDate">6 ديسمبر 2023</span></p>
-                <p class="days-remaining">متبقي <span id="daysRemaining">0</span> يوم</p>
-            </div>
-            <button onclick="location.reload()" class="btn-refresh">
-                تحديث الصفحة
-            </button>
-        </div>
-    </div>
+   
 
 
     <!-- Home Section -->
