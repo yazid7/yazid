@@ -1022,17 +1022,8 @@ active" href="#my-project">My Project</a>
     <!-- محتوى موقعك الأساسي -->
     <div class="container mt-5">
 
-        <div class="row mt-5">
-            <div class="col-md-6 offset-md-3">
-                <div class="card shadow">
-                    <div class="card-body text-center">
-                        <div class="mt-4 p-3 bg-light rounded">
                             <div id="reminderStatus" class="mt-2"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                    
     </div>
     <!-- نافذة عيد الميلاد المنبثقة -->
     <div class="modal birthday-modal fade" id="birthdayModal" tabindex="-1" aria-hidden="true">
@@ -1866,6 +1857,13 @@ alt="cctv">
             if (daysUntil > 7) {
                 statusElement.innerHTML = `<span class="badge bg-secondary">سيتم التذكير قبل أسبوع من الموعد</span><br>
                                           <small class="text-muted">متبقي ${daysUntil} يوم</small>`;
+
+{
+                statusElement.innerHTML = `<span class="badge bg-success">التذكير نشط الآن</span><br>
+                                          <small class="text-muted">${daysUntil} يوم متبقي</small>`;
+            }
+
+
             } else if (daysUntil >= 1 && daysUntil <= 7)  
 
 else if (daysUntil === 0) {
