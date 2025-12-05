@@ -361,19 +361,7 @@
         // دالة إغلاق النافذة
         function closeModal() {
             document.getElementById('birthdayModal').style.display = 'none';
-            // إظهار رسالة وداع بسيطة
-            document.body.innerHTML = `
-                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; text-align: center; padding: 20px;">
-                    <h2 style="color: white; margin-bottom: 1rem;">شكراً لك!</h2>
-                    <p style="color: rgba(255,255,255,0.8); max-width: 400px;">
-                        تم إغلاق نافذة التذكير. يمكنك تحديث الصفحة لإعادة عرض النافذة إذا كان موعد عيد الميلاد خلال الأسبوع القادم.
-                    </p>
-                    <button onclick="location.reload()" style="margin-top: 1.5rem; padding: 10px 25px; border: none; border-radius: 25px; background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%); color: white; font-weight: bold; cursor: pointer;">
-                        تحديث الصفحة
-                    </button>
-                </div>
-            `;
-        }
+            
         
         // تهيئة الصفحة عند التحميل
         document.addEventListener('DOMContentLoaded', function() {
