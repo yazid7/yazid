@@ -3,61 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>موقعي - تذكير عيد الميلاد</title>
+    <title>تذكير عيد الميلاد</title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <style>
-        :root {
-            --primary-color: #ff6b6b;
-            --secondary-color: #4ecdc4;
-            --accent-color: #ffd166;
+        /* إخفاء كل محتوى الصفحة الرئيسية */
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        /* إخفاء كل شيء باستثناء النافذة المنبثقة */
+        .main-content {
+            display: none !important;
+        }
+        
+        /* تخصيص تصميم النافذة المنبثقة */
+        .birthday-modal {
+            background: rgba(0, 0, 0, 0.7);
         }
         
         .birthday-modal .modal-content {
-            border-radius: 20px;
+            border-radius: 25px;
             overflow: hidden;
             border: none;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-            animation: fadeIn 0.5s ease-out;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
         
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes popIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
         }
         
         .birthday-header {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
             color: white;
-            padding: 2.5rem 1rem;
+            padding: 3rem 1.5rem;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
         
-        .birthday-header::before {
+        .birthday-header::after {
             content: "";
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
-            background-size: 30px 30px;
-            animation: float 20s linear infinite;
-        }
-        
-        @keyframes float {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            100% { transform: translate(-30px, -30px) rotate(360deg); }
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
         }
         
         .countdown-container {
             padding: 2.5rem 1.5rem;
             text-align: center;
-            background-color: #f8f9fa;
+            background-color: #ffffff;
         }
         
         .countdown-display {
@@ -65,39 +74,53 @@
             justify-content: center;
             flex-wrap: wrap;
             gap: 15px;
-            margin-bottom: 1.5rem;
+            margin: 2rem 0;
         }
         
         .countdown-box {
-            background: white;
+            background: linear-gradient(145deg, #f8f9fa, #ffffff);
             border-radius: 15px;
-            padding: 1.5rem 0.8rem;
+            padding: 1.5rem 1rem;
             min-width: 100px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 8px 8px 16px #e0e0e0, -8px -8px 16px #ffffff;
+            transition: all 0.3s ease;
             border: 1px solid rgba(255, 107, 107, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .countdown-box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b6b, #ff8e53);
         }
         
         .countdown-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+            transform: translateY(-8px);
+            box-shadow: 12px 12px 24px #d0d0d0, -12px -12px 24px #ffffff;
         }
         
         .countdown-number {
-            font-size: 2.8rem;
+            font-size: 3rem;
             font-weight: 800;
-            color: var(--primary-color);
+            color: #ff6b6b;
             line-height: 1;
             display: block;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
         
         .countdown-label {
             font-size: 1rem;
-            color: #6c757d;
+            color: #666;
             margin-top: 0.5rem;
             display: block;
             font-weight: 600;
+            letter-spacing: 1px;
         }
         
         .event-date {
@@ -105,7 +128,7 @@
             font-size: 1.3rem;
             margin-top: 2rem;
             padding-top: 1.5rem;
-            border-top: 1px dashed #dee2e6;
+            border-top: 2px dashed #e0e0e0;
             font-weight: 600;
         }
         
@@ -134,99 +157,87 @@
             transform: rotate(90deg);
         }
         
-        .confetti {
-            position: absolute;
-            width: 15px;
-            height: 15px;
-            background-color: var(--accent-color);
-            border-radius: 50%;
-            opacity: 0.8;
+        .birthday-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: block;
+            color: #ffd166;
+            text-shadow: 0 0 20px rgba(255, 209, 102, 0.5);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
         }
         
         .btn-remind {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
             border: none;
             color: white;
             font-weight: 600;
-            padding: 0.75rem 2rem;
+            padding: 0.9rem 2.5rem;
             border-radius: 50px;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.3);
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
         }
         
         .btn-remind:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+            box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
+            background: linear-gradient(135deg, #ff5252 0%, #ff7b3a 100%);
         }
         
-        .birthday-icon {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            display: block;
-            color: var(--accent-color);
-            text-shadow: 0 0 10px rgba(255, 209, 102, 0.3);
-        }
-        
-        .progress-bar-custom {
-            height: 8px;
-            background-color: #e9ecef;
-            border-radius: 4px;
-            margin: 1.5rem 0;
-            overflow: hidden;
-        }
-        
-        .progress-bar-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            border-radius: 4px;
-            width: 0%;
-            transition: width 1s ease;
+        .message-container {
+            background: linear-gradient(135deg, #f8f9fa, #ffffff);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 1.5rem auto;
+            max-width: 500px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid #ff6b6b;
         }
         
         @media (max-width: 768px) {
             .countdown-number {
                 font-size: 2.2rem;
             }
+            
             .countdown-box {
                 min-width: 80px;
-                padding: 1.2rem 0.5rem;
+                padding: 1.2rem 0.8rem;
             }
+            
             .birthday-header {
-                padding: 2rem 1rem;
+                padding: 2.5rem 1rem;
+            }
+            
+            .countdown-display {
+                gap: 10px;
+            }
+            
+            body {
+                padding: 10px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- محتوى موقعك الأساسي -->
-    <div class="container mt-5">
-        <h1 class="text-center">مرحباً بكم في موقعي</h1>
-        <p class="text-center text-muted">نافذة تذكير عيد الميلاد ستظهر تلقائياً قبل أسبوع من الموعد</p>
-        
-        <div class="row mt-5">
-            <div class="col-md-6 offset-md-3">
-                <div class="card shadow">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">معلومات الموقع</h5>
-                        <p class="card-text">هذا موقع تجريبي لعرض نافذة تذكير عيد الميلاد المنبثقة التي تظهر قبل أسبوع من تاريخ 6 ديسمبر.</p>
-                        <p class="card-text">سيتم حساب التاريخ تلقائياً لكل سنة.</p>
-                        
-                        <div class="mt-4 p-3 bg-light rounded">
-                            <h6>حالة التذكير الحالية:</h6>
-                            <div id="reminderStatus" class="mt-2"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- محتوى الصفحة الرئيسية (مخفي) -->
+    <div class="main-content container">
+        <h1 class="text-center">محتوى الموقع الرئيسي</h1>
+        <p>هذا المحتوى مخفي ولن يظهر للمستخدم</p>
     </div>
 
     <!-- نافذة عيد الميلاد المنبثقة -->
-    <div class="modal birthday-modal fade" id="birthdayModal" tabindex="-1" aria-hidden="true">
+    <div class="modal birthday-modal fade show" id="birthdayModal" tabindex="-1" aria-modal="true" role="dialog" style="display: block; padding-right: 0px;">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <!-- زر الإغلاق -->
-                <a href="#" class="btn-close-custom" data-bs-dismiss="modal" aria-label="إغلاق">
+                <a href="#" class="btn-close-custom" onclick="closeModal()" aria-label="إغلاق">
                     <i class="bi bi-x"></i>
                 </a>
                 
@@ -239,11 +250,13 @@
                 
                 <!-- العد التنازلي -->
                 <div class="countdown-container">
-                    <h3 class="mb-4">الوقت المتبقي للاحتفال</h3>
+                    <h3 class="mb-4" style="color: #333;">الوقت المتبقي للاحتفال</h3>
                     
-                    <!-- شريط التقدم -->
-                    <div class="progress-bar-custom">
-                        <div id="countdownProgress" class="progress-bar-fill"></div>
+                    <div class="message-container">
+                        <p class="mb-0">
+                            <i class="bi bi-info-circle me-2" style="color: #ff6b6b;"></i>
+                            سيظهر هذا التذكير قبل أسبوع من الموعد كل سنة
+                        </p>
                     </div>
                     
                     <div class="countdown-display">
@@ -266,12 +279,11 @@
                     </div>
                     
                     <div class="event-date">
-                        <p><i class="bi bi-calendar2-event me-2"></i>الموعد: <span id="currentYearDate">6 ديسمبر</span></p>
-                        <p class="text-muted small mt-2">سيظهر هذا التذكير قبل أسبوع من الموعد كل سنة</p>
+                        <p><i class="bi bi-calendar2-event me-2"></i>الموعد القادم: <span id="currentYearDate">6 ديسمبر 2023</span></p>
                     </div>
                     
                     <!-- زر الإغلاق -->
-                    <button type="button" class="btn btn-remind mt-3" data-bs-dismiss="modal">
+                    <button type="button" class="btn btn-remind mt-3" onclick="closeModal()">
                         <i class="bi bi-check-circle me-2"></i>حسناً، تذكرت!
                     </button>
                 </div>
@@ -327,15 +339,13 @@
             const now = new Date().getTime();
             const distance = birthday.getTime() - now;
             
-            // تحديث حالة التذكير في الصفحة الرئيسية
-            updateReminderStatus(distance);
-            
             // إذا مر الموعد بأكثر من يوم، لا تعرض العد التنازلي
             if (distance < -86400000) { // -86400000 = -24 ساعة بالمللي ثانية
                 document.getElementById("days").innerHTML = "00";
                 document.getElementById("hours").innerHTML = "00";
                 document.getElementById("minutes").innerHTML = "00";
                 document.getElementById("seconds").innerHTML = "00";
+                document.querySelector('.birthday-modal').style.display = 'none';
                 return;
             }
             
@@ -351,86 +361,76 @@
             document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
             document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
             
-            // تحديث شريط التقدم (على أساس الأيام المتبقية من أسبوع)
-            const totalDaysInWeek = 7;
-            const daysUntilBirthday = Math.ceil(distance / (1000 * 60 * 60 * 24));
-            const progressPercentage = Math.max(0, 100 - ((daysUntilBirthday / totalDaysInWeek) * 100));
-            document.getElementById("countdownProgress").style.width = progressPercentage + "%";
-            
             // تحديث التاريخ المعروض
             const nextBirthday = getNextBirthday();
             document.getElementById("currentYearDate").textContent = `6 ديسمبر ${nextBirthday.getFullYear()}`;
         }
         
-        // تحديث حالة التذكير في الصفحة الرئيسية
-        function updateReminderStatus(distance) {
-            const statusElement = document.getElementById("reminderStatus");
-            const daysUntil = Math.ceil(distance / (1000 * 60 * 60 * 24));
-            
-            if (daysUntil > 7) {
-                statusElement.innerHTML = `<span class="badge bg-secondary">سيتم التذكير قبل أسبوع من الموعد</span><br>
-                                          <small class="text-muted">متبقي ${daysUntil} يوم</small>`;
-            } else if (daysUntil >= 1 && daysUntil <= 7) {
-                statusElement.innerHTML = `<span class="badge bg-success">التذكير نشط الآن</span><br>
-                                          <small class="text-muted">${daysUntil} يوم متبقي</small>`;
-            } else if (daysUntil === 0) {
-                statusElement.innerHTML = `<span class="badge bg-warning">عيد الميلاد اليوم!</span>`;
-            } else if (daysUntil >= -1) {
-                statusElement.innerHTML = `<span class="badge bg-info">مر يوم منذ عيد الميلاد</span>`;
-            } else {
-                statusElement.innerHTML = `<span class="badge bg-secondary">سيتم التذكير في السنة القادمة</span>`;
-            }
-        }
-        
-        // إنشاء تأثيرات الكونفيتي
-        function createConfetti() {
-            const header = document.querySelector('.birthday-header');
-            if (!header) return;
-            
-            for (let i = 0; i < 15; i++) {
-                const confetti = document.createElement('div');
-                confetti.classList.add('confetti');
-                
-                // ألوان عشوائية
-                const colors = ['#ff6b6b', '#4ecdc4', '#ffd166', '#ff8e53', '#06d6a0'];
-                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                
-                // أحجام عشوائية
-                const size = Math.random() * 10 + 5;
-                confetti.style.width = size + 'px';
-                confetti.style.height = size + 'px';
-                
-                // مواقع عشوائية
-                confetti.style.left = Math.random() * 100 + '%';
-                confetti.style.top = Math.random() * 100 + '%';
-                
-                // إضافة إلى الهيدر
-                header.appendChild(confetti);
-                
-                // إزالة بعد فترة
-                setTimeout(() => {
-                    confetti.remove();
-                }, 3000);
-            }
+        // دالة إغلاق النافذة
+        function closeModal() {
+            document.getElementById('birthdayModal').style.display = 'none';
+            // إظهار رسالة وداع بسيطة
+            document.body.innerHTML = `
+                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; text-align: center; padding: 20px;">
+                    <h2 style="color: white; margin-bottom: 1rem;">شكراً لك!</h2>
+                    <p style="color: rgba(255,255,255,0.8); max-width: 400px;">
+                        تم إغلاق نافذة التذكير. يمكنك تحديث الصفحة لإعادة عرض النافذة إذا كان موعد عيد الميلاد خلال الأسبوع القادم.
+                    </p>
+                    <button onclick="location.reload()" style="margin-top: 1.5rem; padding: 10px 25px; border: none; border-radius: 25px; background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%); color: white; font-weight: bold; cursor: pointer;">
+                        تحديث الصفحة
+                    </button>
+                </div>
+            `;
         }
         
         // تهيئة الصفحة عند التحميل
         document.addEventListener('DOMContentLoaded', function() {
-            // تحديث حالة التذكير أولاً
-            const nextBirthday = getNextBirthday();
-            const now = new Date().getTime();
-            const distance = nextBirthday.getTime() - now;
-            updateReminderStatus(distance);
-            
             // التحقق مما إذا كان يجب عرض النافذة
             if (shouldShowBirthdayModal()) {
-                const birthdayModal = new bootstrap.Modal(document.getElementById('birthdayModal'));
+                // إظهار النافذة مباشرة
+                document.getElementById('birthdayModal').style.display = 'block';
                 
-                // تأخير بسيط لعرض النافذة
-                setTimeout(() => {
-                    birthdayModal.show();
-                    createConfetti();
-                }, 1000);
+                // إضافة تأثير صوتي بسيط (اختياري)
+                try {
+                    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                    const oscillator = audioContext.createOscillator();
+                    const gainNode = audioContext.createGain();
+                    
+                    oscillator.connect(gainNode);
+                    gainNode.connect(audioContext.destination);
+                    
+                    oscillator.frequency.value = 523.25; // نغم C
+                    oscillator.type = 'sine';
+                    
+                    gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+                    gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.5);
+                    
+                    oscillator.start(audioContext.currentTime);
+                    oscillator.stop(audioContext.currentTime + 0.5);
+                } catch (e) {
+                    // تجاهل الأخطاء إذا كان المتصفح لا يدعم Web Audio API
+                }
+            } else {
+                // إذا لم يكن الوقت مناسباً لعرض النافذة
+                const daysToBirthday = Math.ceil((getNextBirthday().getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24));
+                
+                document.body.innerHTML = `
+                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; text-align: center; padding: 20px;">
+                        <h2 style="color: white; margin-bottom: 1.5rem;">لا يوجد تذكير حالياً</h2>
+                        <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 15px; padding: 2rem; max-width: 500px;">
+                            <p style="color: rgba(255,255,255,0.9); margin-bottom: 1rem;">
+                                نافذة تذكير عيد الميلاد ستظهر تلقائياً قبل أسبوع من الموعد.
+                            </p>
+                            <p style="color: rgba(255,255,255,0.8);">
+                                موعد عيد الميلاد القادم: 6 ديسمبر ${getNextBirthday().getFullYear()}<br>
+                                <span style="color: #ffd166; font-weight: bold;">متبقي ${daysToBirthday} يوم</span>
+                            </p>
+                        </div>
+                        <button onclick="location.reload()" style="margin-top: 2rem; padding: 12px 30px; border: none; border-radius: 25px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; font-weight: bold; cursor: pointer; font-size: 1rem;">
+                            تحديث الصفحة
+                        </button>
+                    </div>
+                `;
             }
             
             // تحديث العد التنازلي كل ثانية
@@ -439,12 +439,12 @@
             // التحديث الأولي
             updateCountdown();
             
-            // إعادة إنشاء الكونفيتي كل 10 ثواني إذا كانت النافذة مفتوحة
-            setInterval(() => {
-                if (document.getElementById('birthdayModal').classList.contains('show')) {
-                    createConfetti();
+            // إغلاق النافذة عند الضغط على زر Esc
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape') {
+                    closeModal();
                 }
-            }, 10000);
+            });
         });
     </script>
 </body>
