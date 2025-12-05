@@ -723,9 +723,188 @@ contact-container {
             margin-left: 10px;
         }
 
+/* Birthday */
 
+        .birthday-modal .modal-content {
+            border-radius: 20px;
+            overflow: hidden;
+            border: none;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+            animation: fadeIn 0.5s ease-out;
+        }
 
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
+        .birthday-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 2.5rem 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .birthday-header::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(-30px, -30px) rotate(360deg); }
+        }
+
+        .countdown-container {
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            background-color: #f8f9fa;
+        }
+
+        .countdown-display {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 1.5rem;
+        }
+
+        .countdown-box {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem 0.8rem;
+            min-width: 100px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 107, 107, 0.1);
+        }
+
+        .countdown-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+        }
+
+        .countdown-number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            line-height: 1;
+            display: block;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .countdown-label {
+            font-size: 1rem;
+            color: #6c757d;
+            margin-top: 0.5rem;
+            display: block;
+            font-weight: 600;
+        }
+
+        .event-date {
+            color: #495057;
+            font-size: 1.3rem;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px dashed #dee2e6;
+            font-weight: 600;
+        }
+
+        .btn-close-custom {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.25);
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1.8rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-close-custom:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: rotate(90deg);
+        }
+
+        .confetti {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            opacity: 0.8;
+        }
+
+        .btn-remind {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            border: none;
+            color: white;
+            font-weight: 600;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+        }
+
+        .btn-remind:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+        }
+
+        .birthday-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            display: block;
+            color: var(--accent-color);
+            text-shadow: 0 0 10px rgba(255, 209, 102, 0.3);
+        }
+
+        .progress-bar-custom {
+            height: 8px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+            margin: 1.5rem 0;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            border-radius: 4px;
+            width: 0%;
+            transition: width 1s ease;
+        }
+
+        @media (max-width: 768px) {
+            .countdown-number {
+                font-size: 2.2rem;
+            }
+            .countdown-box {
+                min-width: 80px;
+                padding: 1.2rem 0.5rem;
+            }
+            .birthday-header {
+                padding: 2rem 1rem;
+            }
+        }
 
     </style>
 </head>
