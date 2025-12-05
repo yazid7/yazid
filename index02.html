@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZENATI YAZID - الملف الشخصي المهني</title>
+    <title>Zenati Yazid - Professional Profile</title>
     <link rel="icon" href="https://yazid7.github.io/yazid/assets/img/cctv.png" type="image/png">
-    
-    <!-- الخطوط -->
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -23,9 +20,6 @@
             --dark-color: #343a40;
             --light-color: #f8f9fa;
             --accent-color: #FFD700;
-            --text-color: #333;
-            --light-text: #f8f9fa;
-            --shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
         * {
@@ -35,19 +29,16 @@
         }
         
         body {
-            font-family: 'Tajawal', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             padding-top: 70px;
-            color: var(--text-color);
+            color: #333;
             line-height: 1.6;
-            direction: rtl;
-            text-align: right;
         }
         
         /* Navigation Bar */
         .navbar {
             background-color: var(--dark-color) !important;
-            box-shadow: var(--shadow);
-            padding: 0.5rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
         .navbar-brand {
@@ -59,15 +50,15 @@
         
         .navbar-brand img {
             height: 30px;
-            margin-left: 10px;
+            margin-right: 10px;
         }
         
         .nav-link {
             color: white !important;
             font-weight: 500;
-            padding: 0.5rem 1rem !important;
+            margin: 0 5px;
             position: relative;
-            transition: all 0.3s ease;
+            padding: 8px 12px !important;
         }
         
         .nav-link:hover,
@@ -82,7 +73,7 @@
             height: 2px;
             background: var(--primary-color);
             bottom: 0;
-            right: 0;
+            left: 0;
             transition: width 0.3s;
         }
         
@@ -91,7 +82,7 @@
             width: 100%;
         }
         
-        /* الساعة العلوية */
+        /* Clock */
         .top-clock {
             background: rgba(40, 58, 90, 0.9);
             color: white;
@@ -99,14 +90,13 @@
             text-align: center;
             position: relative;
             z-index: 99;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         
         .clock-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 20px;
+            gap: 15px;
             flex-wrap: wrap;
         }
         
@@ -137,7 +127,6 @@
             position: relative;
             display: inline-block;
             padding-bottom: 15px;
-            margin-bottom: 0;
         }
         
         .section-title h2::after {
@@ -147,24 +136,22 @@
             height: 3px;
             background: var(--primary-color);
             bottom: 0;
-            right: 50%;
-            transform: translateX(50%);
+            left: 50%;
+            transform: translateX(-50%);
         }
         
         /* Home Section */
         #home {
-            background: linear-gradient(rgba(52, 58, 64, 0.9), rgba(52, 58, 64, 0.9)),
-                        url('https://yazid7.github.io/yazid/assets/img/background.jpg');
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(rgba(52, 58, 64, 0.9), rgba(52, 58, 64, 0.9));
             color: white;
             padding: 120px 0;
+            text-align: center;
         }
         
         #home h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 3.5rem;
             font-weight: 700;
+            margin-bottom: 1rem;
         }
         
         #home .lead {
@@ -179,17 +166,17 @@
             height: 200px;
             object-fit: cover;
             border: 4px solid var(--primary-color);
-            box-shadow: var(--shadow);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
         .about-content ul {
             list-style: none;
-            padding: 0;
+            padding-left: 0;
         }
         
         .about-content ul li {
             margin-bottom: 10px;
-            padding-right: 1.5rem;
+            padding-left: 1.5rem;
             position: relative;
         }
         
@@ -198,25 +185,25 @@
             color: var(--primary-color);
             font-weight: bold;
             position: absolute;
-            right: 0;
+            left: 0;
         }
         
-        /* Experience & Skills Cards */
+        /* Cards */
         .card-custom {
             background: white;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
             padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             margin-bottom: 30px;
             height: 100%;
             transition: transform 0.3s ease;
-            border: none;
         }
         
         .card-custom:hover {
             transform: translateY(-5px);
         }
         
+        /* Skills & Projects Items */
         .skill-item, .project-item {
             text-align: center;
             padding: 15px;
@@ -242,24 +229,54 @@
         /* Marquee Section */
         .marquee-section {
             background: rgba(18, 214, 64, 0.05);
+            border-top: 1px solid rgba(18, 214, 64, 0.1);
+            border-bottom: 1px solid rgba(18, 214, 64, 0.1);
             padding: 40px 0;
         }
         
         .marquee-container {
             overflow: hidden;
+            white-space: nowrap;
             position: relative;
         }
         
-        .marquee-content {
-            display: flex;
+        .marquee {
+            display: inline-block;
             animation: marquee 20s linear infinite;
+            padding: 15px 0;
         }
         
         .marquee-item {
-            flex: 0 0 auto;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
             margin: 0 25px;
-            text-align: center;
-            min-width: 100px;
+            transition: all 0.3s ease;
+            min-width: 80px;
+        }
+        
+        .marquee-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .marquee-item img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            margin-bottom: 8px;
+            filter: grayscale(30%);
+            transition: all 0.3s ease;
+        }
+        
+        .marquee-item:hover img {
+            filter: grayscale(0%);
+            transform: scale(1.1);
+        }
+        
+        .marquee-item span {
+            font-size: 0.9rem;
+            color: #2c3e50;
+            font-weight: 500;
         }
         
         @keyframes marquee {
@@ -267,26 +284,49 @@
             100% { transform: translateX(-50%); }
         }
         
-        /* Slider */
+        /* Slider with Zoom */
         .slider-container {
             position: relative;
-            border-radius: 10px;
+            max-width: 1000px;
+            margin: 0 auto;
             overflow: hidden;
+            border-radius: 10px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
         
-        .slide {
-            display: none;
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease;
         }
         
-        .slide.active {
-            display: block;
+        .slide {
+            min-width: 100%;
+            position: relative;
+            cursor: pointer;
         }
         
         .slide img {
             width: 100%;
             height: 400px;
             object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .slide:hover img {
+            transform: scale(1.02);
+        }
+        
+        .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(40, 58, 90, 0.8);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.2rem;
         }
         
         .slider-btn {
@@ -296,14 +336,16 @@
             background: rgba(18, 214, 64, 0.7);
             color: white;
             border: none;
+            padding: 15px;
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            border-radius: 50%;
             width: 50px;
             height: 50px;
-            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
             z-index: 10;
         }
         
@@ -312,19 +354,184 @@
         }
         
         .prev-btn {
-            right: 20px;
-        }
-        
-        .next-btn {
             left: 20px;
         }
         
-        /* Contact Form */
-        .contact-form-container {
-            background: white;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
+        .next-btn {
+            right: 20px;
+        }
+        
+        .slider-dots {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+        
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .dot.active {
+            background: var(--primary-color);
+        }
+        
+        /* Image Modal */
+        .image-modal .modal-content {
+            background: transparent;
+            border: none;
+        }
+        
+        .image-modal .modal-body {
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .image-modal img {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+        
+        .modal-close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            z-index: 1051;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .modal-close-btn:hover {
+            background: rgba(0,0,0,0.9);
+            transform: rotate(90deg);
+        }
+        
+        /* Honeycomb Section */
+        .honeycomb-main-header {
+            margin: 40px auto;
+            position: relative;
+            text-align: center;
+        }
+        
+        .honeycomb-main-header h1 {
+            display: inline-block;
+            font-size: 2.8rem;
+            color: #5D4037;
+            background: linear-gradient(to bottom, #FFD700, #F9A825);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            padding: 15px 50px;
+            border: 3px solid #8B4513;
+            border-radius: 60px;
+            box-shadow: 
+                0 5px 15px rgba(139, 69, 19, 0.2),
+                inset 0 0 10px rgba(255, 215, 0, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .honeycomb-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .honeycomb-hexagon {
+            width: 180px;
+            height: 200px;
+            margin: 0 -25px 10px;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            background: linear-gradient(135deg, #FFD700, #F9A825);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.4s;
+            position: relative;
             overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .honeycomb-hexagon:nth-child(2) {
+            transform: translateY(100px);
+        }
+        
+        .honeycomb-hexagon:hover {
+            transform: scale(1.1) !important;
+            z-index: 10;
+            background: linear-gradient(135deg, #FFC300, #F57F17);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .honeycomb-icon {
+            font-size: 50px;
+            color: #8B4513;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        
+        .honeycomb-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #5D4037;
+            margin: 0;
+            padding: 0 10px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        /* Bee Effects */
+        .bee {
+            position: absolute;
+            font-size: 24px;
+            animation: fly 8s linear infinite;
+            opacity: 0.7;
+            z-index: 5;
+        }
+        
+        @keyframes fly {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(100px, -50px) rotate(10deg); }
+            50% { transform: translate(200px, 0) rotate(0deg); }
+            75% { transform: translate(100px, 50px) rotate(-10deg); }
+            100% { transform: translate(0, 0) rotate(0deg); }
+        }
+        
+        /* Contact Form */
+        .contact-container {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
         }
         
         .contact-header {
@@ -338,13 +545,6 @@
             padding: 30px;
         }
         
-        .form-control {
-            border-radius: 8px;
-            padding: 12px;
-            border: 1px solid #dee2e6;
-            transition: all 0.3s ease;
-        }
-        
         .form-control:focus {
             border-color: var(--primary-color);
             box-shadow: 0 0 0 0.25rem rgba(18, 214, 64, 0.25);
@@ -352,23 +552,46 @@
         
         .btn-primary-custom {
             background: var(--primary-color);
-            border: none;
-            padding: 12px 30px;
+            border-color: var(--primary-color);
+            padding: 10px 25px;
             font-weight: 600;
-            transition: all 0.3s ease;
-            border-radius: 8px;
+            transition: all 0.3s;
         }
         
         .btn-primary-custom:hover {
             background: #0EB33A;
+            border-color: #0EB33A;
             transform: translateY(-2px);
+        }
+        
+        /* Notification */
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: #28a745;
+            color: white;
+            padding: 16px 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            display: flex;
+            align-items: center;
+        }
+        
+        .notification.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
         }
         
         /* Social Icons */
         .social-icons {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 25px;
             margin-top: 20px;
         }
         
@@ -387,15 +610,115 @@
         
         .social-icon:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
-        /* Footer */
-        footer {
-            background: var(--dark-color);
+        /* Birthday Modal */
+        .birthday-modal {
+            background: rgba(0, 0, 0, 0.7);
+        }
+        
+        .birthday-modal.show {
+            display: block;
+        }
+        
+        .birthday-modal .modal-content {
+            border-radius: 25px;
+            overflow: hidden;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        @keyframes popIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        .birthday-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             color: white;
-            padding: 20px 0;
+            padding: 3rem 1.5rem;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .countdown-container {
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            background-color: #ffffff;
+        }
+        
+        .countdown-display {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin: 2rem 0;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .countdown-box {
+            background: linear-gradient(145deg, #f8f9fa, #ffffff);
+            border-radius: 15px;
+            padding: 1.5rem 1rem;
+            box-shadow: 8px 8px 16px #e0e0e0, -8px -8px 16px #ffffff;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 107, 107, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .countdown-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 12px 12px 24px #d0d0d0, -12px -12px 24px #ffffff;
+        }
+        
+        .countdown-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            line-height: 1;
+            display: block;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .countdown-label {
+            font-size: 1rem;
+            color: #666;
+            margin-top: 0.5rem;
+            display: block;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        
+        .btn-close-custom {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.25);
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1.8rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            border: none;
+        }
+        
+        .btn-close-custom:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: rotate(90deg);
         }
         
         /* Responsive Design */
@@ -440,6 +763,53 @@
             .slider-btn {
                 width: 40px;
                 height: 40px;
+                padding: 10px;
+                font-size: 1.2rem;
+            }
+            
+            .honeycomb-hexagon {
+                width: 150px;
+                height: 170px;
+            }
+            
+            .honeycomb-hexagon:nth-child(2) {
+                transform: translateY(85px);
+            }
+            
+            .honeycomb-icon {
+                font-size: 40px;
+            }
+            
+            .honeycomb-title {
+                font-size: 1.1rem;
+            }
+            
+            .marquee-item {
+                margin: 0 15px;
+                min-width: 70px;
+            }
+            
+            .marquee-item img {
+                width: 35px;
+                height: 35px;
+            }
+            
+            .countdown-number {
+                font-size: 2.2rem;
+            }
+            
+            .countdown-box {
+                min-width: 80px;
+                padding: 1.2rem 0.8rem;
+            }
+            
+            .birthday-header {
+                padding: 2.5rem 1rem;
+            }
+            
+            .countdown-display {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
             }
             
             .social-icon {
@@ -478,6 +848,11 @@
             .contact-form {
                 padding: 20px;
             }
+            
+            .honeycomb-main-header h1 {
+                font-size: 2rem;
+                padding: 10px 30px;
+            }
         }
     </style>
 </head>
@@ -486,41 +861,44 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="https://yazid7.github.io/yazid/assets/img/cctv.png" alt="شعار">
-                زيناتي يزيد
+                <img src="https://yazid7.github.io/yazid/assets/img/cctv.png" alt="Logo">
+                Zenati Yazid
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#home">الرئيسية</a>
+                        <a class="nav-link active" href="#home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">عنّي</a>
+                        <a class="nav-link" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#experience">الخبرة</a>
+                        <a class="nav-link" href="#experience">Experience</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#projects">مشاريعي</a>
+                        <a class="nav-link" href="#my-project">My Project</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#skills">المهارات</a>
+                        <a class="nav-link" href="#skills">Skills</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#gallery">معرض الأعمال</a>
+                        <a class="nav-link" href="#honeycomb">Beekeeping</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">اتصل بي</a>
+                        <a class="nav-link" href="#portfolio-slider">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- الساعة العلوية -->
+    <!-- Top Clock -->
     <div class="top-clock">
         <div class="clock-container">
             <div class="time-display" id="current-time"></div>
@@ -528,20 +906,54 @@
         </div>
     </div>
 
-    <!-- Home Section -->
-    <section id="home">
+    <!-- Marquee Section -->
+    <section class="marquee-section">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h1>زيناتي يزيد</h1>
-                    <p class="lead">متخصص أنظمة أمنية ومطور ويب</p>
-                    <p class="mb-4">محترف بخبرة واسعة في تركيب وتكوين أنظمة المراقبة. شغوف بتقنية الأمن وتطوير الويب، مع تركيز قوي على إنشاء حلول آمنة وفعالة.</p>
-                    <div class="mt-4">
-                        <a href="#contact" class="btn btn-primary-custom btn-lg me-2">اتصل بي</a>
-                        <a href="https://drive.google.com/file/d/1LlcpRVRSFLX5QYIyqgpnvWn2xjc1MN5g/view?usp=drivesdk" 
-                           target="_blank" class="btn btn-outline-light btn-lg">عرض السيرة الذاتية</a>
+            <h3 class="text-center mb-4">Technologies I Work With</h3>
+            <div class="marquee-container">
+                <div class="marquee">
+                    <div class="marquee-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux">
+                        <span>Linux</span>
+                    </div>
+                    <div class="marquee-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
+                        <span>Docker</span>
+                    </div>
+                    <div class="marquee-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+                        <span>HTML5</span>
+                    </div>
+                    <div class="marquee-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+                        <span>CSS3</span>
+                    </div>
+                    <div class="marquee-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap">
+                        <span>Bootstrap</span>
+                    </div>
+                    <div class="marquee-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="marquee-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+                        <span>Git</span>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="container text-center">
+            <h1 class="display-4">Zenati Yazid</h1>
+            <p class="lead">Security Systems Specialist & Web Developer</p>
+            <div class="mt-4">
+                <a href="#contact" class="btn btn-primary-custom btn-lg me-2">Contact Me</a>
+                <a href="https://drive.google.com/file/d/1LlcpRVRSFLX5QYIyqgpnvWn2xjc1MN5g/view?usp=drivesdk" 
+                   target="_blank" class="btn btn-outline-light btn-lg">View Resume</a>
             </div>
         </div>
     </section>
@@ -550,37 +962,39 @@
     <section id="about">
         <div class="container">
             <div class="section-title">
-                <h2>عنّي</h2>
+                <h2>About Me</h2>
             </div>
             <div class="row align-items-center">
                 <div class="col-lg-4 text-center mb-4 mb-lg-0">
                     <img src="https://yazid7.github.io/yazid/assets/img/profile.jpg" 
                          class="profile-img rounded-circle" 
-                         alt="صورة زيناتي يزيد">
+                         alt="Zenati Yazid Profile">
                 </div>
                 <div class="col-lg-8">
-                    <h3 class="mb-3">خبير أنظمة أمنية ومطور ويب</h3>
+                    <h3 class="mb-3">Security Systems Expert & Web Developer</h3>
                     <p class="fst-italic mb-4">
-                        أنا يزيد زيناتي، <span id="age"></span> سنة من الجزائر، متخصص في أنظمة الأمن وتطوير الويب.
+                        I am Yazid Zenati, <span id="age"></span> years old from Algeria, specializing in security systems and web development.
                     </p>
                     <div class="row mb-4">
                         <div class="col-md-6">
                             <ul class="about-content">
-                                <li><strong>تاريخ الميلاد:</strong> 06 ديسمبر 1993</li>
-                                <li><strong>الهاتف:</strong> +213 (0) 662-65-08-43</li>
-                                <li><strong>المدينة:</strong> أولاد شبل، الجزائر</li>
+                                <li><strong>Birthday:</strong> 06 December 1993</li>
+                                <li><strong>Phone:</strong> +213 (0) 662-65-08-43</li>
+                                <li><strong>City:</strong> Ouled Chebel, Algeria</li>
                             </ul>
                         </div>
                         <div class="col-md-6">
                             <ul class="about-content">
-                                <li><strong>العمر:</strong> <span id="current-age"></span> سنة</li>
-                                <li><strong>المؤهل:</strong> ثانوية عامة</li>
-                                <li><strong>البريد الإلكتروني:</strong> alphatech7@protonmail.com</li>
+                                <li><strong>Age:</strong> <span id="current-age"></span></li>
+                                <li><strong>Degree:</strong> Secondary Education</li>
+                                <li><strong>Email:</strong> alphatech7@protonmail.com</li>
                             </ul>
                         </div>
                     </div>
                     <p>
-                        محترف بخبرة واسعة في تركيب وتكوين أنظمة المراقبة. شغوف بتقنية الأمن وتطوير الويب، مع تركيز قوي على إنشاء حلول آمنة وفعالة.
+                        Professional with extensive experience in surveillance systems installation and configuration. 
+                        Passionate about security technology and web development, with a strong focus on creating 
+                        secure and efficient solutions.
                     </p>
                 </div>
             </div>
@@ -591,32 +1005,32 @@
     <section id="experience" class="bg-light">
         <div class="container">
             <div class="section-title">
-                <h2>الخبرة المهنية</h2>
+                <h2>Professional Experience</h2>
             </div>
             <div class="row">
                 <div class="col-lg-6 mb-4">
                     <div class="card-custom">
                         <h4 class="text-primary">SONELTECH FORMATION</h4>
-                        <h5 class="text-muted mb-3">يونيو 2017</h5>
-                        <p class="fst-italic mb-3">شهادة أنظمة الإنذار وكاميرات المراقبة</p>
+                        <h5 class="text-muted mb-3">June 2017</h5>
+                        <p class="fst-italic mb-3">Alarm Systems & Surveillance Cameras Certification</p>
                         <ul class="about-content">
-                            <li>تركيب أنواع مختلفة من كاميرات المراقبة</li>
-                            <li>تكوين أنظمة التسجيل DVR و NVR</li>
-                            <li>إعداد المراقبة عن بعد للأجهزة المحمولة</li>
-                            <li>تنفيذ استكشاف الأخطاء وإصلاحها والصيانة</li>
+                            <li>Installed various types of surveillance cameras (dome, bullet, PTZ)</li>
+                            <li>Configured DVR and NVR recording systems</li>
+                            <li>Set up remote monitoring for mobile devices</li>
+                            <li>Performed troubleshooting and maintenance</li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-6 mb-4">
                     <div class="card-custom">
                         <h4 class="text-primary">ETUDES REALISATIONS SYSTEMS ER ATLAS</h4>
-                        <h5 class="text-muted mb-3">يونيو 2019 - أكتوبر 2019</h5>
-                        <p class="fst-italic mb-3">فني تركيب كاميرات مراقبة</p>
+                        <h5 class="text-muted mb-3">June 2019 - October 2019</h5>
+                        <p class="fst-italic mb-3">Surveillance Camera Installation Technician</p>
                         <ul class="about-content">
-                            <li>تركيب أنظمة مراقبة متقدمة</li>
-                            <li>متخصص في تركيب كاميرات PTZ</li>
-                            <li>دمج أنظمة الأقفال الذكية</li>
-                            <li>إجراء مسوحات الموقع وتصميم النظام</li>
+                            <li>Installed advanced surveillance systems</li>
+                            <li>Specialized in PTZ camera installations</li>
+                            <li>Integrated smart locking systems</li>
+                            <li>Conducted site surveys and system design</li>
                         </ul>
                     </div>
                 </div>
@@ -624,37 +1038,37 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
+    <!-- My Project Section -->
+    <section id="my-project">
         <div class="container">
             <div class="section-title">
-                <h2>مشاريعي</h2>
+                <h2>My Project</h2>
             </div>
             <div class="row">
                 <div class="col-md-4 mb-4">
                     <div class="project-item">
                         <a href="https://yazid7.github.io/Cryptotoolbox" target="_blank" class="text-decoration-none">
-                            <img src="https://yazid7.github.io/yazid/assets/img/paper-shredder.gif" alt="التشفير وفك التشفير">
-                            <h5 class="mt-3">أدوات التشفير</h5>
-                            <p>التشفير وفك التشفير</p>
+                            <img src="https://yazid7.github.io/yazid/assets/img/paper-shredder.gif" alt="Encryption and Decryption">
+                            <h5 class="mt-3 text-dark">Crypto Tools</h5>
+                            <p class="text-muted">Encryption and Decryption</p>
                         </a>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
                     <div class="project-item">
                         <a href="https://yazid7.github.io/pdf" target="_blank" class="text-decoration-none">
-                            <img src="https://yazid7.github.io/yazid/assets/img/pdf.gif" alt="أدوات PDF">
-                            <h5 class="mt-3">أدوات PDF</h5>
-                            <p>معالجة وتحرير ملفات PDF</p>
+                            <img src="https://yazid7.github.io/yazid/assets/img/pdf.gif" alt="PDF Tools">
+                            <h5 class="mt-3 text-dark">PDF Tools</h5>
+                            <p class="text-muted">PDF Processing Tools</p>
                         </a>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
                     <div class="project-item">
                         <a href="#" target="_blank" class="text-decoration-none">
-                            <img src="https://yazid7.github.io/yazid/assets/img/dvr.png" alt="أنظمة DVR">
-                            <h5 class="mt-3">أنظمة المراقبة</h5>
-                            <p>تكوين أنظمة DVR/NVR</p>
+                            <img src="https://yazid7.github.io/yazid/assets/img/dvr.png" alt="DVR Systems">
+                            <h5 class="mt-3 text-dark">Surveillance Systems</h5>
+                            <p class="text-muted">DVR/NVR Configuration</p>
                         </a>
                     </div>
                 </div>
@@ -666,71 +1080,35 @@
     <section id="skills" class="bg-light">
         <div class="container">
             <div class="section-title">
-                <h2>المهارات التقنية</h2>
+                <h2>Technical Skills</h2>
             </div>
-            <div class="marquee-section mb-5">
-                <h4 class="text-center mb-4">التقنيات التي أعمل بها</h4>
-                <div class="marquee-container">
-                    <div class="marquee-content">
-                        <div class="marquee-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux">
-                            <span>Linux</span>
-                        </div>
-                        <div class="marquee-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
-                            <span>Docker</span>
-                        </div>
-                        <div class="marquee-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
-                            <span>HTML5</span>
-                        </div>
-                        <div class="marquee-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
-                            <span>CSS3</span>
-                        </div>
-                        <div class="marquee-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap">
-                            <span>Bootstrap</span>
-                        </div>
-                        <div class="marquee-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
-                            <span>JavaScript</span>
-                        </div>
-                        <div class="marquee-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
-                            <span>Git</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
             <div class="row">
                 <div class="col-md-4 mb-4">
                     <div class="card-custom">
-                        <h4 class="text-center text-primary mb-4">أنظمة الأمن</h4>
+                        <h4 class="text-center text-primary mb-4">Security Systems</h4>
                         <div class="row">
                             <div class="col-6 mb-3">
                                 <div class="skill-item">
-                                    <img src="https://yazid7.github.io/yazid/assets/img/cctv.gif" alt="كاميرات مراقبة">
-                                    <p>تركيب كاميرات المراقبة</p>
+                                    <img src="https://yazid7.github.io/yazid/assets/img/cctv.gif" alt="CCTV">
+                                    <p>CCTV Installation</p>
                                 </div>
                             </div>
                             <div class="col-6 mb-3">
                                 <div class="skill-item">
-                                    <img src="https://yazid7.github.io/yazid/assets/img/siren.gif" alt="أنظمة إنذار">
-                                    <p>أنظمة الإنذار</p>
+                                    <img src="https://yazid7.github.io/yazid/assets/img/siren.gif" alt="Alarm">
+                                    <p>Alarm Systems</p>
                                 </div>
                             </div>
                             <div class="col-6 mb-3">
                                 <div class="skill-item">
-                                    <img src="https://yazid7.github.io/yazid/assets/img/dvr.png" alt="DVR/NVR">
-                                    <p>تكوين DVR/NVR</p>
+                                    <img src="https://yazid7.github.io/yazid/assets/img/dvr.png" alt="DVR">
+                                    <p>DVR/NVR Configuration</p>
                                 </div>
                             </div>
                             <div class="col-6 mb-3">
                                 <div class="skill-item">
-                                    <img src="https://yazid7.github.io/yazid/assets/img/smart-lock.gif" alt="أقفال ذكية">
-                                    <p>أنظمة الأقفال الذكية</p>
+                                    <img src="https://yazid7.github.io/yazid/assets/img/smart-lock.gif" alt="Smart Locks">
+                                    <p>Smart Lock Systems</p>
                                 </div>
                             </div>
                         </div>
@@ -739,7 +1117,7 @@
                 
                 <div class="col-md-4 mb-4">
                     <div class="card-custom">
-                        <h4 class="text-center text-primary mb-4">تطوير الويب</h4>
+                        <h4 class="text-center text-primary mb-4">Web Development</h4>
                         <div class="row">
                             <div class="col-6 mb-3">
                                 <div class="skill-item">
@@ -771,7 +1149,7 @@
                 
                 <div class="col-md-4 mb-4">
                     <div class="card-custom">
-                        <h4 class="text-center text-primary mb-4">أدوات وتقنيات</h4>
+                        <h4 class="text-center text-primary mb-4">Tools & Technologies</h4>
                         <div class="row">
                             <div class="col-6 mb-3">
                                 <div class="skill-item">
@@ -804,116 +1182,225 @@
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery">
+    <!-- Honeycomb Section (Beekeeping) -->
+    <section id="honeycomb" class="bg-light">
         <div class="container">
-            <div class="section-title">
-                <h2>معرض الأعمال</h2>
+            <div class="honeycomb-main-header">
+                <h1>
+                    <i class="fas fa-crown"></i>
+                    Kingdom of Bees and Honey
+                    <i class="fas fa-honey-pot"></i>
+                </h1>
             </div>
-            <div class="slider-container">
-                <div class="slides">
-                    <div class="slide active">
-                        <img src="https://yazid7.github.io/yazid/assets/img/Beekeeper.jpg" alt="تربية النحل">
-                        <div class="caption">تربية النحل</div>
-                    </div>
-                    <div class="slide">
-                        <img src="https://yazid7.github.io/yazid/assets/img/IMG_20251031_024134.jpg" alt="الإسعافات الأولية">
-                        <div class="caption">الإسعافات الأولية</div>
-                    </div>
-                    <div class="slide">
-                        <img src="https://yazid7.github.io/yazid/assets/img/IMG_20190926_113135.jpg" alt="أنظمة مراقبة">
-                        <div class="caption">أنظمة المراقبة</div>
-                    </div>
+            
+            <div class="honeycomb-grid">
+                <div class="honeycomb-hexagon" onclick="openCategory('Honey Production')">
+                    <i class="fas fa-honey-pot honeycomb-icon"></i>
+                    <h3 class="honeycomb-title">Honey Production</h3>
                 </div>
-                <button class="slider-btn prev-btn">❮</button>
-                <button class="slider-btn next-btn">❯</button>
+                
+                <div class="honeycomb-hexagon" onclick="openCategory('Queen Breeding')">
+                    <i class="fas fa-crown honeycomb-icon"></i>
+                    <h3 class="honeycomb-title">Queen Breeding</h3>
+                </div>
+                
+                <div class="honeycomb-hexagon" onclick="openCategory('Health Care')">
+                    <i class="fas fa-heartbeat honeycomb-icon"></i>
+                    <h3 class="honeycomb-title">Health Care</h3>
+                </div>
+                
+                <!-- Bees for decoration -->
+                <div class="bee" style="top:20%; left:10%; animation-delay: 0s;">🐝</div>
+                <div class="bee" style="top:50%; left:40%; animation-delay: 2s;">🐝</div>
             </div>
         </div>
     </section>
+
+    <!-- Portfolio Slider Section -->
+    <section id="portfolio-slider">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Work Gallery</h2>
+            </div>
+            <div class="slider-container">
+                <div class="slider">
+                    <div class="slide active" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="https://yazid7.github.io/yazid/assets/img/Beekeeper.jpg">
+                        <img src="https://yazid7.github.io/yazid/assets/img/Beekeeper.jpg" alt="Beekeeper">
+                        <div class="caption">Beekeeper</div>
+                    </div>
+                    <div class="slide" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="https://yazid7.github.io/yazid/assets/img/IMG_20251031_024134.jpg">
+                        <img src="https://yazid7.github.io/yazid/assets/img/IMG_20251031_024134.jpg" alt="First Aid">
+                        <div class="caption">First Aid</div>
+                    </div>
+                    <div class="slide" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="https://yazid7.github.io/yazid/assets/img/IMG_20190926_113135.jpg">
+                        <img src="https://yazid7.github.io/yazid/assets/img/IMG_20190926_113135.jpg" alt="CCTV Installation">
+                        <div class="caption">CCTV Installation</div>
+                    </div>
+                    <div class="slide" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="https://yazid7.github.io/yazid/assets/img/received_672870824820304.jpeg">
+                        <img src="https://yazid7.github.io/yazid/assets/img/received_672870824820304.jpeg" alt="Control Room">
+                        <div class="caption">Control Room</div>
+                    </div>
+                </div>
+                
+                <button class="slider-btn prev-btn" aria-label="Previous slide">❮</button>
+                <button class="slider-btn next-btn" aria-label="Next slide">❯</button>
+                
+                <div class="slider-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Modal -->
+    <div class="modal fade image-modal" id="imageModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <button type="button" class="modal-close-btn" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="modal-body">
+                    <img id="modalImage" src="" alt="Enlarged Image">
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Contact Section -->
     <section id="contact" class="bg-light">
         <div class="container">
             <div class="section-title">
-                <h2>اتصل بي</h2>
+                <h2>Contact Me</h2>
             </div>
-            <div class="row">
-                <div class="col-lg-6 mb-4">
-                    <div class="card-custom h-100">
-                        <h4 class="text-primary mb-4">معلومات التواصل</h4>
-                        <div class="mb-4">
-                            <h5><i class="fas fa-map-marker-alt text-primary me-2"></i>العنوان:</h5>
-                            <p>أولاد شبل رقم 84، بيروتا، الجزائر</p>
-                        </div>
-                        <div class="mb-4">
-                            <h5><i class="fas fa-envelope text-primary me-2"></i>البريد الإلكتروني:</h5>
-                            <p>alphatech7@protonmail.com</p>
-                        </div>
-                        <div class="mb-4">
-                            <h5><i class="fas fa-phone text-primary me-2"></i>الهاتف:</h5>
-                            <p>+213 (0) 662-65-08-43</p>
-                        </div>
-                    </div>
+            
+            <div class="contact-container">
+                <div class="contact-header">
+                    <h2><i class="bi bi-envelope-paper me-2"></i>Get In Touch</h2>
+                    <p class="mb-0">Feel free to contact me, leave your message and I'll get back to you soon</p>
                 </div>
-                <div class="col-lg-6">
-                    <div class="contact-form-container">
-                        <div class="contact-header">
-                            <h3><i class="bi bi-envelope-paper me-2"></i>أرسل رسالة</h3>
-                            <p class="mb-0">يسعدني تواصلك معي، اترك رسالتك وسأرد عليك قريبًا</p>
-                        </div>
-                        <div class="contact-form">
-                            <form id="contactForm">
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="row">
+                            <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label for="name" class="form-label">الاسم الكامل</label>
+                                    <label for="name" class="form-label">Full Name</label>
                                     <input type="text" class="form-control" id="name" name="name" required>
                                 </div>
+                            </div>
+                            <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label for="email" class="form-label">البريد الإلكتروني</label>
+                                    <label for="email" class="form-label">Email Address</label>
                                     <input type="email" class="form-control" id="email" name="email" required>
                                 </div>
-                                <div class="mb-3">
-                                    <label for="subject" class="form-label">الموضوع</label>
-                                    <input type="text" class="form-control" id="subject" name="subject" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="message" class="form-label">الرسالة</label>
-                                    <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
-                                </div>
-                                <div class="text-center">
-                                    <button type="submit" class="btn btn-primary-custom">
-                                        <i class="bi bi-send me-2"></i>إرسال الرسالة
-                                    </button>
-                                </div>
-                            </form>
+                            </div>
                         </div>
-                    </div>
+                        
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="subject" name="subject" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary-custom">
+                                <i class="bi bi-send me-2"></i>Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Notification -->
+            <div class="notification" id="notification">
+                <i class="bi bi-check-circle-fill"></i>
+                <span>Your message has been sent successfully!</span>
+            </div>
+            
+            <!-- Social Media -->
+            <div class="text-center mt-5">
+                <h4 class="mb-4">Connect With Me</h4>
+                <div class="social-icons">
+                    <a href="https://github.com/yazid7" target="_blank" class="social-icon" style="background: #333;">
+                        <i class="bi bi-github"></i>
+                    </a>
+                    <a href="https://dz.linkedin.com/in/yazid-zenati-09528912b" target="_blank" class="social-icon" style="background: #0a66c2;">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a href="https://instagram.com/alpha_technology7" target="_blank" class="social-icon" style="background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);">
+                        <i class="bi bi-instagram"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Social Media Section -->
-    <section id="social" class="py-4 bg-dark text-white">
-        <div class="container">
-            <h4 class="text-center mb-4">تواصل معي على وسائل التواصل</h4>
-            <div class="social-icons">
-                <a href="https://github.com/yazid7" target="_blank" class="social-icon" style="background: #333;">
-                    <i class="bi bi-github"></i>
-                </a>
-                <a href="https://dz.linkedin.com/in/yazid-zenati-09528912b" target="_blank" class="social-icon" style="background: #0a66c2;">
-                    <i class="bi bi-linkedin"></i>
-                </a>
-                <a href="https://instagram.com/alpha_technology7" target="_blank" class="social-icon" style="background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);">
-                    <i class="bi bi-instagram"></i>
-                </a>
+    <!-- Birthday Modal -->
+    <div class="modal fade birthday-modal" id="birthdayModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <button type="button" class="btn-close-custom" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="bi bi-x"></i>
+                </button>
+                
+                <div class="birthday-header">
+                    <i class="bi bi-gift-fill birthday-icon"></i>
+                    <h2 class="mb-2">Birthday Coming Soon!</h2>
+                    <p class="mb-0">Birthday: December 6th</p>
+                </div>
+                
+                <div class="countdown-container">
+                    <h3 class="mb-4">Time Until Celebration</h3>
+                    
+                    <div class="message-container" style="background: #f8f9fa; padding: 15px; border-radius: 10px; margin-bottom: 20px;">
+                        <p class="mb-0">
+                            <i class="bi bi-info-circle me-2 text-primary"></i>
+                            This reminder appears one week before the date every year
+                        </p>
+                    </div>
+                    
+                    <div class="countdown-display">
+                        <div class="countdown-box">
+                            <span id="days" class="countdown-number">00</span>
+                            <span class="countdown-label">Days</span>
+                        </div>
+                        <div class="countdown-box">
+                            <span id="hours" class="countdown-number">00</span>
+                            <span class="countdown-label">Hours</span>
+                        </div>
+                        <div class="countdown-box">
+                            <span id="minutes" class="countdown-number">00</span>
+                            <span class="countdown-label">Minutes</span>
+                        </div>
+                        <div class="countdown-box">
+                            <span id="seconds" class="countdown-number">00</span>
+                            <span class="countdown-label">Seconds</span>
+                        </div>
+                    </div>
+                    
+                    <div class="event-date" style="color: #495057; margin-top: 2rem;">
+                        <p><i class="bi bi-calendar2-event me-2"></i>Next Date: <span id="currentYearDate">December 6, 2023</span></p>
+                    </div>
+                    
+                    <button type="button" class="btn btn-primary-custom mt-3" data-bs-dismiss="modal">
+                        <i class="bi bi-check-circle me-2"></i>Okay, I Remembered!
+                    </button>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- Footer -->
-    <footer>
+    <footer class="bg-dark text-white text-center py-4">
         <div class="container">
-            <p class="mb-0">&copy; <span id="current-year">2023</span> زيناتي يزيد. جميع الحقوق محفوظة.</p>
+            <p class="mb-0">&copy; <span id="current-year">2023</span> Zenati Yazid. All rights reserved.</p>
         </div>
     </footer>
 
@@ -922,10 +1409,10 @@
     
     <!-- Custom JS -->
     <script>
-        // تحديث السنة الحالية
+        // Update current year
         document.getElementById('current-year').textContent = new Date().getFullYear();
 
-        // حساب العمر
+        // Calculate age
         function calculateAge(birthDate) {
             const today = new Date();
             const birth = new Date(birthDate);
@@ -942,11 +1429,11 @@
         document.getElementById('age').textContent = age;
         document.getElementById('current-age').textContent = age;
 
-        // تحديث الساعة والتاريخ
+        // Update clock
         function updateDateTime() {
             const now = new Date();
             
-            // تنسيق الوقت
+            // Time formatting
             const timeOptions = {
                 hour: '2-digit',
                 minute: '2-digit',
@@ -954,7 +1441,7 @@
                 hour12: false
             };
             
-            // تنسيق التاريخ
+            // Date formatting
             const dateOptions = {
                 weekday: 'long',
                 year: 'numeric',
@@ -962,105 +1449,209 @@
                 day: 'numeric'
             };
             
-            document.getElementById('current-time').textContent = now.toLocaleTimeString('ar-EG', timeOptions);
-            document.getElementById('current-date').textContent = now.toLocaleDateString('ar-EG', dateOptions);
+            document.getElementById('current-time').textContent = now.toLocaleTimeString('en-US', timeOptions);
+            document.getElementById('current-date').textContent = now.toLocaleDateString('en-US', dateOptions);
         }
 
-        // تحديث الساعة كل ثانية
         updateDateTime();
         setInterval(updateDateTime, 1000);
 
-        // السلايدر
+        // Slider functionality
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
         
         function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.classList.toggle('active', i === index);
+            // Hide all slides
+            slides.forEach(slide => {
+                slide.classList.remove('active');
             });
+            
+            // Remove active class from all dots
+            dots.forEach(dot => {
+                dot.classList.remove('active');
+            });
+            
+            // Show current slide and activate dot
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+            
+            // Move slider
+            document.querySelector('.slider').style.transform = `translateX(-${index * 100}%)`;
+            
+            currentSlide = index;
         }
         
         function nextSlide() {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
+            let next = currentSlide + 1;
+            if (next >= slides.length) next = 0;
+            showSlide(next);
         }
         
         function prevSlide() {
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            showSlide(currentSlide);
+            let prev = currentSlide - 1;
+            if (prev < 0) prev = slides.length - 1;
+            showSlide(prev);
         }
         
-        // إضافة الأحداث للأزرار
+        // Add event listeners to buttons
         document.querySelector('.next-btn').addEventListener('click', nextSlide);
         document.querySelector('.prev-btn').addEventListener('click', prevSlide);
         
-        // تغيير الشريحة تلقائيًا كل 5 ثوانٍ
-        setInterval(nextSlide, 5000);
-
-        // النافذة المنبثقة لعيد الميلاد
-        function checkBirthday() {
-            const today = new Date();
-            const birthday = new Date(today.getFullYear(), 11, 6); // 6 ديسمبر
-            
-            // إذا كان التاريخ بين 29 نوفمبر و6 ديسمبر
-            const weekBefore = new Date(today.getFullYear(), 10, 29); // 29 نوفمبر
-            
-            if (today >= weekBefore && today <= birthday) {
-                const modal = new bootstrap.Modal(document.getElementById('birthdayModal'));
-                modal.show();
-            }
-        }
-
-        // تحريك ماركيز التقنيات
-        function initializeMarquee() {
-            const marqueeContent = document.querySelector('.marquee-content');
-            const items = document.querySelectorAll('.marquee-item');
-            
-            // مضاعفة العناصر للحصول على تأثير مستمر
-            items.forEach(item => {
-                const clone = item.cloneNode(true);
-                marqueeContent.appendChild(clone);
-            });
-        }
-
-        // تهيئة الصفحة عند التحميل
-        document.addEventListener('DOMContentLoaded', function() {
-            initializeMarquee();
-            checkBirthday();
-            
-            // إضافة حدث لتحسين التنقل
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetSection = document.querySelector(targetId);
-                    
-                    if (targetSection) {
-                        window.scrollTo({
-                            top: targetSection.offsetTop - 70,
-                            behavior: 'smooth'
-                        });
-                        
-                        // تحديث النشاط في شريط التنقل
-                        document.querySelectorAll('.nav-link').forEach(navLink => {
-                            navLink.classList.remove('active');
-                        });
-                        this.classList.add('active');
-                    }
-                });
-            });
-            
-            // النموذج
-            document.getElementById('contactForm').addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // هنا يمكنك إضافة كود إرسال النموذج
-                alert('شكرًا لتواصلك! سيتم الرد عليك قريبًا.');
-                this.reset();
+        // Add event listeners to dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlide(index);
             });
         });
-
-        // تحديث التنقل النشط عند التمرير
+        
+        // Auto slide every 5 seconds
+        let slideInterval = setInterval(nextSlide, 5000);
+        
+        // Pause auto slide on hover
+        const sliderContainer = document.querySelector('.slider-container');
+        sliderContainer.addEventListener('mouseenter', () => {
+            clearInterval(slideInterval);
+        });
+        
+        sliderContainer.addEventListener('mouseleave', () => {
+            slideInterval = setInterval(nextSlide, 5000);
+        });
+        
+        // Image modal functionality
+        const imageModal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        
+        imageModal.addEventListener('show.bs.modal', function(event) {
+            const button = event.relatedTarget;
+            const imageUrl = button.getAttribute('data-image');
+            modalImage.src = imageUrl;
+        });
+        
+        // Duplicate marquee items for continuous effect
+        function initializeMarquee() {
+            const marquee = document.querySelector('.marquee');
+            const marqueeItems = document.querySelectorAll('.marquee-item');
+            
+            // Duplicate items
+            marqueeItems.forEach(item => {
+                const clone = item.cloneNode(true);
+                marquee.appendChild(clone);
+            });
+        }
+        
+        initializeMarquee();
+        
+        // Honeycomb click functionality
+        function openCategory(category) {
+            alert(`Opening category: ${category}`);
+            // You can add navigation or modal opening logic here
+        }
+        
+        // Birthday modal logic
+        function checkBirthday() {
+            const today = new Date();
+            const birthday = new Date(today.getFullYear(), 11, 6); // December 6
+            
+            // Check if we're within 7 days before birthday
+            const weekBefore = new Date(birthday);
+            weekBefore.setDate(birthday.getDate() - 7);
+            
+            if (today >= weekBefore && today <= birthday) {
+                const birthdayModal = new bootstrap.Modal(document.getElementById('birthdayModal'));
+                birthdayModal.show();
+                startCountdown();
+            }
+        }
+        
+        function startCountdown() {
+            const birthday = new Date(new Date().getFullYear(), 11, 6);
+            const now = new Date();
+            
+            // If birthday has passed this year, use next year's birthday
+            if (now > birthday) {
+                birthday.setFullYear(birthday.getFullYear() + 1);
+            }
+            
+            function updateCountdown() {
+                const now = new Date();
+                const diff = birthday - now;
+                
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+                
+                document.getElementById('days').textContent = days.toString().padStart(2, '0');
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+                
+                document.getElementById('currentYearDate').textContent = `December 6, ${birthday.getFullYear()}`;
+            }
+            
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        }
+        
+        // Check birthday on page load
+        checkBirthday();
+        
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show loading state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...';
+            submitBtn.disabled = true;
+            
+            // Simulate form submission (replace with actual AJAX call)
+            setTimeout(() => {
+                // Show success notification
+                const notification = document.getElementById('notification');
+                notification.classList.add('show');
+                
+                // Hide notification after 4 seconds
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                }, 4000);
+                
+                // Reset form
+                this.reset();
+                
+                // Reset button
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }, 1500);
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update active nav link
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                }
+            });
+        });
+        
+        // Update active nav link on scroll
         window.addEventListener('scroll', function() {
             const sections = document.querySelectorAll('section');
             const navLinks = document.querySelectorAll('.nav-link');
