@@ -1,1225 +1,185 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zenati Yazid - Professional Profile</title>
-    <link rel="icon" href="https://yazid7.github.io/yazid/assets/img/cctv.png" type="image/png">
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-        <style>
-        :root {
-            --primary-color: #12D640;
-            --secondary-color: #2c3e50;
-            --dark-color: #343a40;
-            --light-color: #f8f9fa;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            padding-top: 70px;
-            color: #333;
-                 }
-        
-        
-        /* Navigation Bar */
-        .navbar {
-            background-color: var(--dark-color) !important;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .navbar-brand {
-            font-weight: 700;
-            color: white !important;
-        }
-        
-        .navbar-brand img {
-            height: 30px;
-            margin-right: 10px;
-        }
-        
-        .nav-link {
-            color: white !important;
-            font-weight: 500;
-            margin: 0 10px;
-            position: relative;
-        }
-        
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--primary-color) !important;
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background: var(--primary-color);
-            bottom: 0;
-            left: 0;
-            transition: width 0.3s;
-        }
-        
-        .nav-link:hover::after,
-        .nav-link.active::after {
-            width: 100%;
-        }
-        
-        /* Sections */
-        section {
-            padding: 80px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        
-        .section-title h2 {
-            font-weight: 700;
-            color: var(--secondary-color);
-            position: relative;
-            display: inline-block;
-            padding-bottom: 15px;
-        }
-        
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            width: 50px;
-            height: 3px;
-            background: var(--primary-color);
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        /* About Section */
-        .about-img {
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .about-content ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .about-content ul li {
-            margin-bottom: 10px;
-        }
-        
-        .about-content ul i {
-            color: var(--primary-color);
-            margin-right: 10px;
-        }
-            .portfolio-slider{color: var(--primary-color);
-            margin-right: 10px;}
-        
-        /* Experience Section */
-        .experience-item {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            margin-bottom: 30px;
-        }
-        
-        /* Skills Section */
-        .skill-category {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            margin-bottom: 30px;
-        }
-        
-        .skill-item {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        
-        .skill-item img {
-            height: 60px;
-            margin-bottom: 10px;
-        }
-        
-        /* Contact Section */
-        .contact-info {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            margin-bottom: 30px;
-            height: 100%;
-        }
-        
-        .contact-form {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-       /* تنسيق الساعة الجديدة */
-        .top-clock {
-            background: rgba(40, 58, 90, 0.9);
-            color: white;
-            padding: 8px 0;
-            margin-top: -5px;  /* رفع الساعة 5 بكسل لأعلى */
-            text-align: center;
-            font-family: 'Segoe UI', sans-serif;
-            position: relative;
-            z-index: 100;
-            transform: translateY(-3px);  /* رفع إضافي بدقة */
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        .clock-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .time-display {
-            font-size: 1.1rem;
-            font-weight: 500;
-            letter-spacing: 1px;
-        }
-        
-        .date-display {
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-        
-.expandable-card {
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  margin-bottom: 20px;
-  overflow: hidden;
-}
-
-.card-header {
-  background: #12D640;
-  color: white;
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.card-header:hover {
-  background: #0EB33A;
-}
-
-.header-content {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.header-content i {
-  font-size: 1.2rem;
-}
-
-.toggle-icon {
-  transition: transform 0.3s ease;
-}
-
-.card-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease, padding 0.3s ease;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  gap: 15px;
-}
-
-.tech-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 15px;
-  transition: transform 0.3s ease;
-}
-
-.tech-item:hover {
-  transform: translateY(-5px);
-}
-
-.tech-item img {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-  margin-bottom: 8px;
-}
-
-/* Slider Styles */
-.slider-container {
-  position: relative;
-  max-width: 1000px;
-  margin: 0 auto;
-  overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-.slider {
-  display: flex;
-  transition: transform 0.5s ease;
-}
-
-.slide {
-  min-width: 100%;
-  position: relative;
-}
-
-.slide img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 10px;
-}
-
-.caption {
-  position: absolute;
-  bottom:0;
-  left: 0;
-  right: 0;
-  background: rgba(40, 58, 90, 0.8);
-  color: white;
-  padding: 15px;
-  text-align: center;
-  font-size: 1.2rem;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-}
-
-.slider-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(18, 214, 64, 0.7);
-  color: white;
-  border: none;
-  padding: 15px;
-  cursor: pointer;
-  font-size: 1.5rem;
-  transition: all 0.3s ease;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.slider-btn:hover {
-  background: rgba(18, 214, 64, 0.9);
-}
-
-.prev-btn {
-  left: 20px;
-}
-
-.next-btn {
-  right: 20px;
-}
-
-.slider-dots {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 10px;
-}
-
-.dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.5);
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.dot.active {
-  background: var(--primary-color);
-}
-
-@media (max-width: 768px) {
-  .slider-btn {
-    width: 40px;
-    height: 40px;
-    padding: 10px;
-    font-size: 1.2rem;
-  }
-  
-  .caption {
-    font-size: 1rem;
-    padding: 10px;
-  }
-    }
-
-
-
-
-
-.marquee-section {
-  background: rgba(18, 214, 64, 0.05);
-  border-top: 1px solid rgba(18, 214, 64, 0.1);
-  border-bottom: 1px solid rgba(18, 214, 64, 0.1);
-}
-
-.marquee-container {
-  overflow: hidden;
-  white-space: nowrap;
-  position: relative;
-}
-
-.marquee {
-  display: inline-block;
-  animation: marquee 20s linear infinite;
-  padding: 15px 0;
-}
-
-.marquee-item {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 25px;
-  transition: all 0.3s ease;
-  min-width: 80px;
-}
-
-.marquee-item:hover {
-  transform: translateY(-5px);
-}
-
-.marquee-item img {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-  margin-bottom: 8px;
-  filter: grayscale(30%);
-  transition: all 0.3s ease;
-}
-
-.marquee-item:hover img {
-  filter: grayscale(0%);
-  transform: scale(1.1);
-}
-
-.marquee-item span {
-  font-size: 0.9rem;
-  color: #2c3e50;
-  font-weight: 500;
-}
-
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-@media (max-width: 768px) {
-  .marquee-item {
-    margin: 0 15px;
-    min-width: 70px;
-  }
-  
-  .marquee-item img {
-    width: 35px;
-    height: 35px;
-  }
-}
-
-            
-
- /* العنوان الرئيسي - الإصدار المعدّل */
-        .honeycomb-main-header {
-            margin: 40px auto;
-            position: relative;
-            text-align: center;
-        }
-        
-        .honeycomb-main-header h1 {
-            display: inline-block;
-            font-size: 2.8rem;
-            color: #5D4037;
-            background: linear-gradient(to bottom, #FFD700, #F9A825);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            padding: 15px 50px;
-            border: 3px solid #8B4513;
-            border-radius: 60px;
-            box-shadow: 
-                0 5px 15px rgba(139, 69, 19, 0.2),
-                inset 0 0 10px rgba(255, 215, 0, 0.3);
-            position: relative;
-            z-index: 1;
-            font-family: 'Tajawal', sans-serif;
-        }
-        
-        /* إطار ثابت بدلاً من الدوار */
-        .honeycomb-main-header h1::after {
-            content: "";
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
-            bottom: -10px;
-            border: 2px dashed rgba(255, 215, 0, 0.7);
-            border-radius: 70px; 
-            z-index: -1;
-        }
-        
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-10px) rotate(5deg); }
-        }
-
-      /* شبكة خلايا النحل - التصميم السداسي المتكامل */
-        .honeycomb-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-        }
-        
-        .honeycomb-hexagon {
-            width: 180px;
-            height: 200px;
-            margin: 0 -25px 10px;
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            background: linear-gradient(135deg, #FFD700, #F9A825);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.4s;
-            position: relative;
+    <title>عيد ميلاد قريب!</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        /* Custom styles for beautiful popup */
+        .birthday-modal .modal-content {
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: none;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
         }
-        
-        .honeycomb-hexagon:nth-child(2) {
-            transform: translateY(100px);
+        .birthday-header {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
         }
-        
-        .honeycomb-hexagon:hover {
-            transform: scale(1.1) !important;
+        .countdown-container {
+            padding: 2rem;
+            text-align: center;
+        }
+        .countdown-box {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 0.5rem;
+            display: inline-block;
+            min-width: 110px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .countdown-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #ff6b6b;
+            line-height: 1;
+            display: block;
+        }
+        .countdown-label {
+            font-size: 1rem;
+            color: #6c757d;
+            margin-top: 0.5rem;
+            display: block;
+        }
+        .event-date {
+            color: #495057;
+            font-size: 1.2rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px dashed #dee2e6;
+        }
+        .btn-close-custom {
+            position: absolute;
+            top: 15px;
+            left: 15px;
             z-index: 10;
-            background: linear-gradient(135deg, #FFC300, #F57F17);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
         }
-        
-        .honeycomb-hexagon::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('https://www.transparenttextures.com/patterns/hexellence.png');
-            opacity: 0.1;
+        .btn-close-custom:hover {
+            background: rgba(255, 255, 255, 0.5);
         }
-        
-        .honeycomb-icon {
-            font-size: 50px;
-            color: #8B4513;
-            margin-bottom: 15px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            transition: all 0.3s;
-        }
-        
-        .honeycomb-title {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: #5D4037;
-            margin: 0;
-            padding: 0 10px;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
-        }
-        
-        /* تأثيرات نحلية إضافية */
-        .bee {
-            position: absolute;
-            font-size: 24px;
-            animation: fly 8s linear infinite;
-            opacity: 0.7;
-            z-index: 5;
-        }
-        
-        @keyframes fly {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(100px, -50px) rotate(10deg); }
-            50% { transform: translate(200px, 0) rotate(0deg); }
-            75% { transform: translate(100px, 50px) rotate(-10deg); }
-            100% { transform: translate(0, 0) rotate(0deg); }
-        }
-        
-            
-            .honeycomb-hexagon:nth-child(2) {
-                transform: translateY(80px);
-            }
-            
-            .honeycomb-icon {
-                font-size: 40px;
-            }
-            
-            .honeycomb-title {
-                font-size: 1.1rem;
-            }
-        }
-              /*مواقع تواصل إجتماعي تأثيرات عند المرور */
-  .bi, svg {
-    transition: transform 0.3s ease, opacity 0.3s ease;
-  }
-  .bi:hover, svg:hover {
-    transform: scale(1.2);
-    opacity: 0.9;
-  }
-            
     </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="https://yazid7.github.io/yazid/assets/img/cctv.png" alt="Logo">
-                Zenati Yazid
+
+<!-- Main page content (your website) -->
+<div class="container mt-5">
+    <h1>مرحباً بكم في موقعي</h1>
+    <p>سيظهر نافذة عيد الميلاد المنبثقة تلقائياً عند تحميل الصفحة.</p>
+</div>
+
+<!-- Birthday Modal -->
+<div class="modal birthday-modal fade" id="birthdayModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <!-- Custom close button -->
+            <a href="#" class="btn-close-custom" data-bs-dismiss="modal">
+                <i class="bi bi-x"></i>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#experience">Experience</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skills">Skills</a>
-                    </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="#portfolio-slider">Portfolio</a>
-                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
+            
+            <!-- Header section -->
+            <div class="birthday-header">
+                <h2><i class="bi bi-gift-fill me-2"></i>عيد ميلاد قريب!</h2>
+                <p class="mb-0">عيد الميلاد: 6 ديسمبر 1993</p>
+            </div>
+            
+            <!-- Countdown timer -->
+            <div class="countdown-container">
+                <h3 class="mb-4">الوقت المتبقي</h3>
+                <div class="countdown-display">
+                    <div class="countdown-box">
+                        <span id="days" class="countdown-number">00</span>
+                        <span class="countdown-label">أيام</span>
+                    </div>
+                    <div class="countdown-box">
+                        <span id="hours" class="countdown-number">00</span>
+                        <span class="countdown-label">ساعات</span>
+                    </div>
+                    <div class="countdown-box">
+                        <span id="minutes" class="countdown-number">00</span>
+                        <span class="countdown-label">دقائق</span>
+                    </div>
+                    <div class="countdown-box">
+                        <span id="seconds" class="countdown-number">00</span>
+                        <span class="countdown-label">ثواني</span>
+                    </div>
+                </div>
+                
+                <div class="event-date">
+                    <p><i class="bi bi-calendar-event me-2"></i>الموعد: 6 ديسمبر 1993</p>
+                </div>
+                
+                <!-- Close button -->
+                <button type="button" class="btn btn-secondary mt-4" data-bs-dismiss="modal">
+                    <i class="bi bi-x-circle me-1"></i>إغلاق النافذة
+                </button>
             </div>
         </div>
-    </nav>
-<!-- الساعة الجديدة -->
-    <div class="top-clock">
-        <div class="clock-container">
-            <div class="time-display" id="current-time"></div>
-            <div class="date-display" id="current-date"></div>
-        </div>
     </div>
-
-      <!-- أضف هذا في المكان الذي تريد عرض الشريط -->
-<section class="marquee-section py-4">
-  <div class="container">
-    <h3 class="text-center mb-4">Technologies I Work With</h3>
-    <div class="marquee-container">
-      <div class="marquee">
-        <!-- الصف الأول -->
-        <div class="marquee-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux">
-          <span>Linux</span>
-        </div>
-        <div class="marquee-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
-          <span>Docker</span>
-        </div>
-        <div class="marquee-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
-          <span>HTML5</span>
-        </div>
-        <div class="marquee-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
-          <span>CSS3</span>
-        </div>
-        <div class="marquee-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap">
-          <span>Bootstrap</span>
-        </div>
-        
-        <!-- تكرار الصف لإحداث تأثير متواصل -->
-        <div class="marquee-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux">
-          <span>Linux</span>
-        </div>
-        <div class="marquee-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
-          <span>Docker</span>
-        </div>
-        <div class="marquee-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
-          <span>HTML5</span>
-        </div>
-        <div class="marquee-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
-          <span>CSS3</span>
-        </div>
-        <div class="marquee-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap">
-          <span>Bootstrap</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>  
-
-    <!-- Home Section -->
-    <section id="home" class="bg-dark text-light" style="padding: 10px 0;">
-        
-        <div class="container text-center">
-            <h1 class="display-4">Zenati Yazid</h1>
-            <p class="lead">Security Systems Specialist & Web Developer</p>
-            <div class="mt-4">
-                <a href="#contact" class="btn btn-primary btn-lg me-2">Contact Me</a>
-                <a href="https://drive.google.com/file/d/1LlcpRVRSFLX5QYIyqgpnvWn2xjc1MN5g/view?usp=drivesdk" 
-                   target="_blank" class="btn btn-outline-primary btn-lg">View Resume</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <div class="section-title">
-                <h2>About Me</h2>
-            </div>
-            <div class="container mt-5"> <!-- mt-5 لتحديد هامش علوي -->
-  <div class="row justify-content-center"> <!-- توسيط أفقي -->
-    <div class="col-auto text-center"> <!-- عمود يتكيف مع حجم الصورة -->
-      <img 
-        src="https://yazid7.github.io/yazid/assets/img/profile.jpg" 
-        class="rounded-circle shadow-lg" 
-        style="width: 200px; height: 200px; object-fit: cover; border: 4px solid white;"
-        alt="ZENATI YAZID"
-      >
-    </div>
-  </div>
 </div>
-                <div class="col-lg-8 pt-4 pt-lg-0 content">
-                    <div class="text-center">
-                      <h3>Security Systems Expert &amp; Web Developer</h3>
-                    </div>
-                    <p class="fst-italic">
-                        I am Yazid Zenati, <span id="age"></span> years old from Algeria, specializing in security systems and web development.
-                    </p>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <ul>
-                                <li><i class="fas fa-chevron-right"></i> <strong>Birthday:</strong> 06 December 1993</li>
-                                <li><i class="fas fa-chevron-right"></i> <strong>Phone:</strong> +213 (0) 662-65-08-43</li>
-                                <li><i class="fas fa-chevron-right"></i> <strong>City:</strong> Ouled Chebel, Algeria</li>
-                            </ul>
-                        </div>
-                        <div class="col-md-6">
-                            <ul>
-                                <li><i class="fas fa-chevron-right"></i> <strong>Age:</strong> <span id="current-age"></span></li>
-                                <li><i class="fas fa-chevron-right"></i> <strong>Degree:</strong> Secondary Education</li>
-                                <li><i class="fas fa-chevron-right"></i> <strong>Email:</strong> alphatech7@protonmail.com</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <p class="mt-3">
-                        Professional with extensive experience in surveillance systems installation and configuration. 
-                        Passionate about security technology and web development, with a strong focus on creating 
-                        secure and efficient solutions.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="bg-light">
-        <div class="container">
-            <div class="section-title">
-                <h2>Professional Experience</h2>
-            </div>
-            
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="experience-item">
-                        <h4>SONELTECH FORMATION</h4>
-                        <h5>June 2017</h5>
-                        <p><em>Alarm Systems & Surveillance Cameras Certification</em></p>
-                        <ul>
-                            <li>Installed various types of surveillance cameras (dome, bullet, PTZ)</li>
-                            <li>Configured DVR and NVR recording systems</li>
-                            <li>Set up remote monitoring for mobile devices</li>
-                            <li>Performed troubleshooting and maintenance</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="col-lg-6">
-                    <div class="experience-item">
-                        <h4>ETUDES REALISATIONS SYSTEMS ER ATLAS</h4>
-                        <h5>June 2019 - October 2019</h5>
-                        <p><em>Surveillance Camera Installation Technician</em></p>
-                        <ul>
-                            <li>Installed advanced surveillance systems</li>
-                            <li>Specialized in PTZ camera installations</li>
-                            <li>Integrated smart locking systems</li>
-                            <li>Conducted site surveys and system design</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Bootstrap JS Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="container">
-            <div class="section-title">
-                <h2>Technical Skills</h2>
-            </div>
-            
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="skill-category">
-                        <h4 class="text-center mb-4">Security Systems</h4>
-                        <div class="row">
-                            <div class="col-6">
-                                <div class="skill-item">
-                                    <img src="https://cdn-icons-png.flaticon.com/512/2777/2777154.png" alt="CCTV">
-                                    <p>CCTV Installation</p>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="skill-item">
-                                    <img src="https://cdn-icons-png.flaticon.com/512/3048/3048127.png" alt="Alarm">
-                                    <p>Alarm Systems</p>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="skill-item">
-                                    <img src="https://cdn-icons-png.flaticon.com/512/2933/2933245.png" alt="DVR">
-                                    <p>DVR/NVR Configuration</p>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="skill-item">
-                                    <img src="https://cdn-icons-png.flaticon.com/512/2885/2885257.png" alt="Smart Locks">
-                                    <p>Smart Lock Systems</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-4">
-                    <div class="skill-category">
-                        <h4 class="text-center mb-4">Web Development</h4>
-                        <div class="row">
-                            <div class="col-6">
-                                <div class="skill-item">
-                                    <img src="https://www.vectorlogo.zone/logos/w3_html5/w3_html5-icon.svg" alt="HTML5">
-                                    <p>HTML5</p>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="skill-item">
-                                    <img src="https://www.vectorlogo.zone/logos/w3_css/w3_css-icon.svg" alt="CSS3">
-                                    <p>CSS3</p>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="skill-item">
-                                    <img src="https://www.vectorlogo.zone/logos/javascript/javascript-icon.svg" alt="JavaScript">
-                                    <p>JavaScript</p>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="skill-item">
-                                    <img src="https://www.vectorlogo.zone/logos/getbootstrap/getbootstrap-icon.svg" alt="Bootstrap">
-                                    <p>Bootstrap</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                               <div class="col-md-4">
-                    <div class="skill-category">
-                        <h4 class="text-center mb-4">Tools & Technologies</h4>
-                        <div class="row">
-                            <div class="col-6">
-                                <div class="skill-item">
-                                    <img src="https://www.vectorlogo.zone/logos/linux/linux-icon.svg" alt="Linux">
-                                    <p>Linux</p>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="skill-item">
-                                    <img src="https://www.vectorlogo.zone/logos/microsoft/microsoft-icon.svg" alt="Windows">
-                                    <p>Windows</p>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="skill-item">
-                                    <img src="https://www.vectorlogo.zone/logos/torproject/torproject-icon.svg" alt="Tor">
-                                    <p>Tor</p>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="skill-item">
-                                    <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="Git">
-                                    <p>Git</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>    
-
-    <!-- العنوان المعدّل -->
-    <div class="honeycomb-main-header">
-        <h1>
-            <i class="fas fa-crown"></i>
-            مملكة النحل والعسل
-            <i class="fas fa-honey-pot"></i>
-        </h1>
-    </div>
-    
-    <!-- شبكة خلايا النحل السداسية -->
-    <div class="honeycomb-grid">
-        <!-- خلية 1 - إنتاج العسل -->
-        <div class="honeycomb-hexagon" onclick="openCategory('إنتاج العسل')">
-            <i class="fas fa-honey-pot honeycomb-icon"></i>
-            <h3 class="honeycomb-title">إنتاج العسل</h3>
-        </div>
-        
-        <!-- خلية 2 - تربية الملكات -->
-        <div class="honeycomb-hexagon" onclick="openCategory('تربية الملكات')">
-            <i class="fas fa-crown honeycomb-icon"></i>
-            <h3 class="honeycomb-title">تربية الملكات</h3>
-        </div>
-        
-        <!-- خلية 3 - الرعاية الصحية -->
-        <div class="honeycomb-hexagon" onclick="openCategory('الرعاية الصحية')">
-            <i class="fas fa-heartbeat honeycomb-icon"></i>
-            <h3 class="honeycomb-title">الرعاية الصحية</h3>
-        </div>
-        
-        <!-- نحلات طائرة (زخرفة) -->
-        <div class="bee" style="top:20%; left:10%; animation-delay: 0s;">🐝</div>
-        <div class="bee" style="top:50%; left:40%; animation-delay: 2s;">🐝</div>
-    </div>
-        
-</section>
-
-    
-
-    <!-- Image Slider Section -->
-<section id="portfolio-slider" class="bg-light">
-  <div class="container">
-    <div class="section-title"><h2>My Work Gallery</h2>
-    </div>
-    <div class="slider-container">
-      <div class="slider">
-        <div class="slide active">
-          <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="Project 1">
-          <div class="caption">Security System Installation</div>
-        </div>
-        <div class="slide">
-          <img src="https://via.placeholder.com/800x500/2c3e50/FFFFFF?text=Project+2" alt="Project 2">
-          <div class="caption">CCTV Configuration</div>
-        </div>
-        <div class="slide">
-          <img src="https://via.placeholder.com/800x500/343a40/FFFFFF?text=Project+3" alt="Project 3">
-          <div class="caption">Web Development</div>
-        </div>
-      </div>
-      
-      <button class="slider-btn prev-btn" aria-label="Previous slide">&#10094;</button>
-      <button class="slider-btn next-btn" aria-label="Next slide">&#10095;</button>
-      
-      <div class="slider-dots">
-        <span class="dot active"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-      </div>
-    </div>
-  </div>
-</section>
-    
-    <!-- Contact Section -->
-    <section id="contact" class="bg-light">
-        <div class="container">
-            <div class="section-title">
-                <h2>Contact Me</h2>
-            </div>
-            
-            <div class="row">
-                <div class="col-lg-5">
-                    <div class="contact-info">
-                        <div class="info-box mb-4">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <h4>Location:</h4>
-                            <p>Ouled Chebel N°:84, Birtouta, Algeria</p>
-                        </div>
-                        
-                        <div class="info-box mb-4">
-                            <i class="fas fa-envelope"></i>
-                            <h4>Email:</h4>
-                            <p>alphatech7@protonmail.com</p>
-                        </div>
-                        
-                        <div class="info-box mb-4">
-                            <i class="fas fa-phone"></i>
-                            <h4>Call:</h4>
-                            <p>+213 (0) 662-65-08-43</p>
-                        </div>
-
-
-<h4>Social Media:</h4>
-                        <div class="d-flex justify-content-center gap-4 my-5">
-                            
-  <!-- GitHub (لون رمادي داكن) -->
-  <a href="https://github.com/yazid7" target="_blank" class="text-decoration-none">
-    <i class="bi bi-github fs-1" style="color: #333;"></i>
-  </a>
-  
-  <!-- LinkedIn (لون أزرق لينكدإن) -->
-  <a href="https://dz.linkedin.com/in/yazid-zenati-09528912b" target="_blank" class="text-decoration-none">
-    <i class="bi bi-linkedin fs-1" style="color: #0a66c2;"></i>
-  </a>
-  
-  <!-- Instagram (تدرج لوني) -->
-  <a href="https://instagram.com/alpha_technology7" class="mb-3" target="_blank" class="text-decoration-none">
-    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="url(#insta-gradient)">
-      <defs>
-        <linearGradient id="insta-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#833ab4"/>
-          <stop offset="50%" stop-color="#fd1d1d"/>
-          <stop offset="100%" stop-color="#fcb045"/>
-        </linearGradient>
-      </defs>
-      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-    </svg>
-  </a>
-</div>
-                        
-                    </div>
-                </div>
-                
-                <div class="col-lg-7">
-                    <div class="contact-form">
-                        <form action="https://formspree.io/f/mqadroqp"
-  method="POST">
-                            <div class="row">
-                                <div class="col-md-6 form-group">
-                                    <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-                                </div>
-                                <div class="col-md-6 form-group mt-3 mt-md-0">
-                                    <input type="email" class="form-control" name="email" placeholder="Your Email" required>
-                                </div>
-                            </div>
-                            <div class="form-group mt-3">
-                                <input type="text" class="form-control" name="subject" placeholder="Subject" required>
-                            </div>
-                            <div class="form-group mt-3">
-                                <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
-                            </div>
-                            <div class="text-center mt-3">
-                                <button type="submit" class="btn btn-primary">Send Message</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-4">
-  <div class="container">
-    <p>&copy; 2023<script>document.write(new Date().getFullYear() > 2023 ? '-' + new Date().getFullYear() : '')</script> Zenati Yazid. All rights reserved.</p>
-  </div>
-</footer>
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Custom JS -->
-    <script>
-        // Calculate age
-        function calculateAge(birthDateStr) {
-            const birthDate = new Date(birthDateStr);
-            const today = new Date();
-            let age = today.getFullYear() - birthDate.getFullYear();
-            const m = today.getMonth() - birthDate.getMonth();
-            if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-                age--;
-            }
-            return age;
-        }
-
-        const age = calculateAge("1993-12-06");
-        document.getElementById("age").textContent = age;
-        document.getElementById("current-age").textContent = age;
-
-        // Update active nav link on scroll
-        window.addEventListener('scroll', function() {
-            const scrollPosition = window.scrollY;
-            
-            document.querySelectorAll('section').forEach(section => {
-                const sectionTop = section.offsetTop - 100;
-                const sectionHeight = section.offsetHeight;
-                const sectionId = section.getAttribute('id');
-                
-                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                    document.querySelectorAll('.nav-link').forEach(link => {
-                        link.classList.remove('active');
-                        if (link.getAttribute('href') === `#${sectionId}`) {
-                            link.classList.add('active');
-                        }
-                    });
-                }
-            });
-        });
-
-        // Close mobile menu when clicking on a nav link
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function() {
-                const navbarCollapse = document.querySelector('.navbar-collapse');
-                if (navbarCollapse.classList.contains('show')) {
-                    const bsCollapse = new bootstrap.Collapse(navbarCollapse);
-                    bsCollapse.hide();
-                }
-            });
-        });
-    </script>
-    <script>
-        // دالة تحديث الساعة
-        function updateClock() {
-            const now = new Date();
-            
-            // تنسيق الوقت
-            const timeOptions = { 
-                hour: '2-digit', 
-                minute: '2-digit',
-                second: '2-digit',
-                hour12: false
-            };
-            
-            // تنسيق التاريخ
-            const dateOptions = {
-                weekday: 'long',
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-            };
-            
-            document.getElementById('current-time').textContent = now.toLocaleTimeString('en-US', timeOptions);
-            document.getElementById('current-date').textContent = now.toLocaleDateString('en-US', dateOptions);
-        }
-
-        // تحديث فوري عند التحميل
-        updateClock();
-        
-        // تحديث كل ثانية
-        setInterval(updateClock, 1000);
-    </script>
 <script>
-  // Initialize Slider
-  document.addEventListener('DOMContentLoaded', function() {
-    const slider = document.querySelector('.slider');
-    const slides = document.querySelectorAll('.slide');
-    const dots = document.querySelectorAll('.dot');
-    const prevBtn = document.querySelector('.prev-btn');
-    const nextBtn = document.querySelector('.next-btn');
-    let currentIndex = 0;
-    const slideCount = slides.length;
+// Set your event date (Year, Month-1, Day, Hour, Minute, Second)
+const eventDate = new Date(1993, 11, 6); // Note: Month is 0-indexed (11 = December)
 
-    // Update slider position
-    function updateSlider() {
-      slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-      
-      // Update dots
-      dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentIndex);
-      });
-      
-      // Update slides
-      slides.forEach((slide, index) => {
-        slide.classList.toggle('active', index === currentIndex);
-      });
+// Function to update countdown
+function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = eventDate - now;
+    
+    // If event date is in the past, show 00
+    if (distance < 0) {
+        document.getElementById("days").innerHTML = "00";
+        document.getElementById("hours").innerHTML = "00";
+        document.getElementById("minutes").innerHTML = "00";
+        document.getElementById("seconds").innerHTML = "00";
+        return;
     }
+    
+    // Calculate time units
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    // Update display with leading zeros
+    document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
+    document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
+    document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
+    document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+}
 
-    // Next slide
-    function nextSlide() {
-      currentIndex = (currentIndex + 1) % slideCount;
-      updateSlider();
-    }
-
-    // Previous slide
-    function prevSlide() {
-      currentIndex = (currentIndex - 1 + slideCount) % slideCount;
-      updateSlider();
-    }
-
-    // Button events
-    nextBtn.addEventListener('click', nextSlide);
-    prevBtn.addEventListener('click', prevSlide);
-
-    // Dot navigation
-    dots.forEach((dot, index) => {
-      dot.addEventListener('click', () => {
-        currentIndex = index;
-        updateSlider();
-      });
-    });
-
-    // Auto slide (optional)
-    setInterval(nextSlide, 5000);
-  });
-</script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-  // تكرار المحتوى تلقائياً لتجنب الفراغات
-  const marquee = document.querySelector('.marquee');
-  marquee.innerHTML += marquee.innerHTML;
+// Show modal when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    const birthdayModal = new bootstrap.Modal(document.getElementById('birthdayModal'));
+    birthdayModal.show();
+    
+    // Update countdown every second
+    setInterval(updateCountdown, 1000);
+    
+    // Initial update
+    updateCountdown();
 });
-    </script>
-<script>
-       function openCategory(category) {
-            // يمكنك تغيير هذا لفتح صفحة أو عرض تفاصيل
-            alert(`ستتم معالجة: ${category}`);
-            // window.location.href = `${category}.html`;
-        }
 </script>
-    
+
 </body>
 </html>
