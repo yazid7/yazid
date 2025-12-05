@@ -1866,10 +1866,9 @@ alt="cctv">
             if (daysUntil > 7) {
                 statusElement.innerHTML = `<span class="badge bg-secondary">سيتم التذكير قبل أسبوع من الموعد</span><br>
                                           <small class="text-muted">متبقي ${daysUntil} يوم</small>`;
-            } else if (daysUntil >= 1 && daysUntil <= 7) {
-                statusElement.innerHTML = `<span class="badge bg-success">التذكير نشط الآن</span><br>
-                                          <small class="text-muted">${daysUntil} يوم متبقي</small>`;
-            } else if (daysUntil === 0) {
+            } else if (daysUntil >= 1 && daysUntil <= 7)  
+
+else if (daysUntil === 0) {
                 statusElement.innerHTML = `<span class="badge bg-warning">عيد الميلاد اليوم!</span>`;
             } else if (daysUntil >= -1) {
                 statusElement.innerHTML = `<span class="badge bg-info">مر يوم منذ عيد الميلاد</span>`;
